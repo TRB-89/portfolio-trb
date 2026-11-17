@@ -37,6 +37,11 @@ export interface SkillCategory {
     level: 'foundational' | 'competent' | 'experimental';
     note?: string;
   }[];
+  projectSlug?: string;
+  projectName?: string;
+  tagline?: string;
+  colSpan?: number;
+  rowSpan?: number;
 }
 
 export interface Profile {

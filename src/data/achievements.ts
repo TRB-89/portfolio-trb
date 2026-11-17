@@ -19,7 +19,7 @@ export const achievementsData: Achievement[] = [
     date: '2024 — Present',
     category: 'academic',
     description:
-      'Undergraduate coursework combining core computational theory, algorithms, systems programming, and business systems integration.',
+      'Undergraduate coursework combining core computational theory, algorithms, systems programming, and business systems integration with high academic rigor.',
     verificationStatus: 'verified'
   },
   {
@@ -32,6 +32,28 @@ export const achievementsData: Achievement[] = [
       'Author of VORTEX, an experimental GPU mathematical optimization solver testing parallel sparse linear algebra kernels and CPU-GPU memory streams.',
     verificationStatus: 'verified',
     link: 'https://github.com/TRB-89/V-RTEX'
+  },
+  {
+    id: 'aura-mental-wellness-deployment',
+    title: 'AURA AI Assistant Live Deployment',
+    organization: 'Healthcare Systems Experiment',
+    date: '2025',
+    category: 'engineering',
+    description:
+      'Designed and deployed an AI-driven conversational health companion featuring real-time sentimental safety boundaries and responsive client interface.',
+    verificationStatus: 'verified',
+    link: 'https://aura-mind.vercel.app/'
+  },
+  {
+    id: 'gfg-redline-platform',
+    title: 'GFG REDLINE Career Architecture Prototype',
+    organization: 'GeeksforGeeks Hackathon Initiative',
+    date: '2025',
+    category: 'hackathon',
+    description:
+      'Architected a structured career revival and skill-gap remediation platform with contextual roadmap generation and automated skill assessment pipelines.',
+    verificationStatus: 'verified',
+    link: 'https://github.com/TRB-89'
   },
   {
     id: 'sdg-one-planet-deployment',
@@ -52,7 +74,7 @@ export const technicalMetricsData: TechnicalMetric[] = [
     value: 11,
     suffix: '',
     label: 'Technical Systems',
-    description: 'Documented engineering repositories across systems, AI, and civic domains',
+    description: 'Documented engineering repositories across AI, HPC, and civic domains',
     verified: true
   },
   {
@@ -60,23 +82,23 @@ export const technicalMetricsData: TechnicalMetric[] = [
     value: 6,
     suffix: '',
     label: 'Core Domains',
-    description: 'AI, HPC, Geospatial, Cybersecurity, Full-Stack, and Product Design',
+    description: 'AI, HPC, Geospatial, Cybersecurity, Full-Stack, and Product Engineering',
     verified: true
   },
   {
-    id: 'reactbits-components',
-    value: 18,
+    id: 'active-deployments',
+    value: 2,
     suffix: '',
-    label: 'Component Primitives',
-    description: 'Modular interactive components integrated into the architectural foundation',
+    label: 'Active Deployments',
+    description: 'Verified public production applications operating on modern edge infrastructure',
     verified: true
   },
   {
-    id: 'performance-budget',
-    value: 60,
-    suffix: 'fps',
-    label: 'Framerate Target',
-    description: 'Smooth hardware-accelerated rendering across desktop and mobile viewports',
+    id: 'sparse-matrix-savings',
+    value: 95,
+    suffix: '%+',
+    label: 'Sparse Memory Savings',
+    description: 'CSR memory footprint reduction achieved in VORTEX GPU matrix benchmarks',
     verified: true
   }
 ];

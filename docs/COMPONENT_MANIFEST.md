@@ -21,17 +21,17 @@
 | 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 | **INTEGRATED** |
 | 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 | **INTEGRATED** |
 | 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 | **INTEGRATED** |
-| 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 | SCHEDULED |
-| 11 | **Magic Bento** | `MagicBento-TS-TW` | Technical Arsenal (05) | Pointer Spotlight / Tilt | Lucide / Internal SVGs | Phase 07 | SCHEDULED |
-| 12 | **Animated List** | `AnimatedList-TS-TW` | Achievements (06) | CSS Spring / Selection | Lucide / Internal SVGs | Phase 07 | SCHEDULED |
-| 13 | **Count Up** | `CountUp-TS-TW` | Achievements (06) | Motion Value Springs | `motion@^12` | Phase 07 | SCHEDULED |
+| 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 | **INTEGRATED** |
+| 11 | **Magic Bento** | `MagicBento-TS-TW` | Technical Arsenal (05) | Pointer Spotlight / Tilt | Lucide / Internal SVGs | Phase 07 | **INTEGRATED** |
+| 12 | **Animated List** | `AnimatedList-TS-TW` | Achievements (06) | CSS Spring / Selection | Lucide / Internal SVGs | Phase 07 | **INTEGRATED** |
+| 13 | **Count Up** | `CountUp-TS-TW` | Achievements (06) | Motion Value Springs | `motion@^12` | Phase 07 | **INTEGRATED** |
 | 14 | **Target Cursor** | `TargetCursor-TS-TW` | Global Shell | Pointer Events / Reticle | `react-dom@^19` | Phase 03 | **INTEGRATED** |
 | 15 | **Magnet** | `Magnet-TS-TW` | Global Shell / CTAs | Spring Easing | None (React) | Phase 03 | **INTEGRATED** |
 | 16 | **Gradual Blur** | `GradualBlur-TS-TW` | Global Shell | Backdrop Filter Mask | None (React) | Phase 03 | **INTEGRATED** |
 | 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 | **INTEGRATED** |
 | 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 | **INTEGRATED** |
 
-**Integration Progress:** 14 of 18 components integrated (77.8% locked component coverage). All 14 active components verified via automated Playwright testing.
+**Integration Progress:** 18 of 18 components integrated (100.0% locked component coverage). All 18 active components verified via automated Playwright testing (142 passed, 8 skipped across 150 test executions).
 
 ---
 
@@ -245,15 +245,15 @@
 - **Official Name:** LogoLoop
 - **Source URL:** https://reactbits.dev/components/logo-loop
 - **Registry:** `https://reactbits.dev/r/LogoLoop-TS-TW.json`
-- **Installation Method:** Registry import.
+- **Installation Method:** Registry import under `src/components/reactbits/LogoLoop.tsx`.
 - **Required Dependencies:** Pure React + CSS animations.
 - **Supported Props:**
   - `logos: LogoItem[]`, `speed?: number`, `direction?: 'left' | 'right'`, `gap?: number`
-  - `pauseOnHover?: boolean`, `fadeOut?: boolean`, `fadeOutColor?: string`
+  - `pauseOnHover?: boolean`, `fadeOut?: boolean`, `fadeOutColor?: string`, `ariaLabel?: string`
 - **Intended Section:** Technical Arsenal (05).
 - **Performance Considerations:** Continuous CSS `@keyframes` translate with `will-change: transform`.
-- **Mobile Fallback:** Native horizontal scrollable strip.
-- **Integration Status:** Toolchain tags staged in `TechStack.tsx`; infinite marquee in Phase 07.
+- **Mobile Fallback:** Responsive horizontal flex wrap layout when reduced motion is preferred or on small screens.
+- **Integration Status:** Fully integrated in `src/components/reactbits/LogoLoop.tsx` and orchestrated in `src/sections/TechStack.tsx` during Phase 07. Features 18 authentic developer toolchain glyphs with pause-on-hover mechanics, edge fading masks, and accessible ARIA labeling.
 
 ---
 
@@ -261,15 +261,15 @@
 - **Official Name:** MagicBento
 - **Source URL:** https://reactbits.dev/components/magic-bento
 - **Registry:** `https://reactbits.dev/r/MagicBento-TS-TW.json`
-- **Installation Method:** Registry import.
+- **Installation Method:** Registry import under `src/components/reactbits/MagicBento.tsx`.
 - **Required Dependencies:** Lucide React (substituting HugeIcons to avoid redundant icon sets).
 - **Supported Props:**
   - `items?: MagicBentoItem[]`, `columns?: number`, `gap?: number`, `glowColor?: string`
-  - `enableBorderGlow?: boolean`, `enableSpotlight?: boolean`, `enableTilt?: boolean`
+  - `enableBorderGlow?: boolean`, `enableSpotlight?: boolean`, `enableTilt?: boolean`, `textAutoHide?: boolean`
 - **Intended Section:** Technical Arsenal (05).
-- **Performance Considerations:** Radial cursor gradient calculation.
-- **Mobile Fallback:** Static borders without pointer spotlight.
-- **Integration Status:** Categorized bento cells live in `TechStack.tsx`; interactive spotlight in Phase 07.
+- **Performance Considerations:** Pointer spotlight calculation throttled via `requestAnimationFrame`. Stars disabled (`enableStars={false}`) to preserve performance budget.
+- **Mobile Fallback:** Static single-column responsive layout without pointer spotlight or tilt physics.
+- **Integration Status:** Fully integrated in `src/components/reactbits/MagicBento.tsx` and orchestrated in `src/sections/TechStack.tsx` during Phase 07. Represents 6 engineering domains across an asymmetric 3-column layout with metallic border glow, pointer spotlighting, verified competence tags (`[EXP]`, `[COM]`, `[FOU]`), and flagship project deep links.
 
 ---
 
@@ -277,15 +277,15 @@
 - **Official Name:** AnimatedList
 - **Source URL:** https://reactbits.dev/components/animated-list
 - **Registry:** `https://reactbits.dev/r/AnimatedList-TS-TW.json`
-- **Installation Method:** Registry import.
+- **Installation Method:** Registry import under `src/components/reactbits/AnimatedList.tsx`.
 - **Required Dependencies:** Pure React / CSS transitions.
 - **Supported Props:**
   - `items?: AnimatedListItem[]`, `onItemSelect?: (item: any, idx: number) => void`
-  - `selectOnHover?: boolean`, `enableArrowNavigation?: boolean`, `accentColor?: string`
+  - `selectOnHover?: boolean`, `enableArrowNavigation?: boolean`, `accentColor?: string`, `renderItem?: (...) => ReactNode`
 - **Intended Section:** Achievements and Milestones (06).
-- **Performance Considerations:** Staggered spring transitions on enter.
-- **Mobile Fallback:** Native vertical list.
-- **Integration Status:** Milestone items structured in `Achievements.tsx`; arrow navigation in Phase 07.
+- **Performance Considerations:** Spring-driven selection ring with smooth cubic-bezier transitions. Offscreen intersection gating via `IntersectionObserver`.
+- **Mobile Fallback:** Touch-accessible single-column list with static layout on reduced-motion preference.
+- **Integration Status:** Fully integrated in `src/components/reactbits/AnimatedList.tsx` and orchestrated in `src/sections/Achievements.tsx` during Phase 07. Renders 6 verified engineering milestones with roving arrow key navigation, hover selection rings, verified status tags, dates, and external evidence anchors.
 
 ---
 
@@ -293,15 +293,15 @@
 - **Official Name:** CountUp
 - **Source URL:** https://reactbits.dev/text-animations/count-up
 - **Registry:** `https://reactbits.dev/r/CountUp-TS-TW.json`
-- **Installation Method:** Registry import.
+- **Installation Method:** Registry import under `src/components/reactbits/CountUp.tsx`.
 - **Required Dependencies:** `motion@^12.23.12`
 - **Supported Props:**
   - `to: number`, `from?: number`, `duration?: number`, `delay?: number`
   - `prefix?: string`, `suffix?: string`, `separator?: string`, `trigger?: 'view' | 'load'`
 - **Intended Section:** Achievements and Milestones (06).
-- **Performance Considerations:** Motion animate value hook; triggers only on viewport intersection.
+- **Performance Considerations:** Motion animate value hook; triggers on viewport intersection with immediate screen-reader `<span className="sr-only">` accessibility.
 - **Mobile Fallback:** Static numeric display when reduced motion is preferred.
-- **Integration Status:** Metric data model configured in `Achievements.tsx`; animated counter in Phase 07.
+- **Integration Status:** Fully integrated in `src/components/reactbits/CountUp.tsx` and orchestrated in `src/sections/Achievements.tsx` during Phase 07. Displays 4 verifiable technical benchmarks (11 Technical Systems, 6 Core Domains, 2 Active Deployments, 95%+ Sparse Memory Savings).
 
 ---
 

@@ -2,81 +2,51 @@ import { SkillCategory } from '../types';
 
 export const skillCategoriesData: SkillCategory[] = [
   {
-    id: 'ai-systems',
-    title: 'Artificial Intelligence',
-    description:
-      'Integration of modern neural architectures, conversational frameworks, and applied machine learning models into operational software.',
-    skills: [
-      {
-        name: 'Generative AI Integration',
-        level: 'competent',
-        note: 'Structured JSON schemas and prompt orchestration'
-      },
-      {
-        name: 'Conversational AI',
-        level: 'competent',
-        note: 'Context management, safety guardrails, and speech synthesis'
-      },
-      {
-        name: 'AI Assistants',
-        level: 'competent',
-        note: 'Tool-calling and task-oriented workflow automations'
-      },
-      {
-        name: 'Machine Learning Fundamentals',
-        level: 'competent',
-        note: 'Clustering, classification, and regression modeling'
-      },
-      {
-        name: 'Neural Network Experimentation',
-        level: 'experimental',
-        note: 'MLP and Autoencoders for anomaly detection'
-      }
-    ]
-  },
-  {
     id: 'computational-engineering',
     title: 'Computational Engineering',
+    tagline: 'GPU Sparse Linear Solvers & CUDA',
+    projectName: 'VORTEX',
+    projectSlug: 'vortex',
     description:
       'Low-level systems programming, hardware-aware parallel execution, and numerical optimization algorithms.',
+    colSpan: 2,
     skills: [
       {
-        name: 'CUDA',
+        name: 'CUDA C++',
         level: 'experimental',
         note: 'Custom kernel authoring, thread block layout, and memory coalescing'
       },
       {
-        name: 'C++',
+        name: 'Modern C++ (17/20)',
         level: 'competent',
-        note: 'Modern C++17/20, RAII, memory management, and STL algorithms'
+        note: 'RAII patterns, memory layouts, and zero-overhead abstractions'
       },
       {
-        name: 'GPU Computing',
+        name: 'GPU Asynchronous Computing',
         level: 'experimental',
         note: 'Host-to-device asynchronous streams and bandwidth optimization'
       },
       {
-        name: 'Parallel Computation',
-        level: 'competent',
-        note: 'Multi-threaded algorithmic routines and CPU parallelization'
-      },
-      {
-        name: 'Sparse Matrix Operations',
+        name: 'Sparse Matrix Linear Algebra',
         level: 'experimental',
         note: 'Compressed Sparse Row (CSR) algorithms and SpMV'
       },
       {
-        name: 'Mathematical Optimization',
+        name: 'Numerical Optimization',
         level: 'foundational',
-        note: 'Numerical minimization and objective state tracking'
+        note: 'Minimization algorithms and convergence state tracking'
       }
     ]
   },
   {
     id: 'geospatial-intelligence',
     title: 'Geospatial Intelligence',
+    tagline: 'NISAR SAR & Surface Water Analysis',
+    projectName: 'PARALLAX',
+    projectSlug: 'parallax',
     description:
       'Multi-spectral and synthetic aperture radar (SAR) raster processing coupled with high-performance WebGL map layers.',
+    colSpan: 1,
     skills: [
       {
         name: 'SAR Data Processing',
@@ -89,133 +59,147 @@ export const skillCategoriesData: SkillCategory[] = [
         note: 'Multi-band GeoTIFF ingestion, windowing, and spatial transforms'
       },
       {
-        name: 'Geospatial Visualization',
+        name: 'MapLibre GL & WebGL',
         level: 'competent',
-        note: 'Dynamic vector tile styling and coordinate reprojection'
-      },
-      {
-        name: 'MapLibre GL',
-        level: 'competent',
-        note: 'GPU-accelerated client-side raster and vector rendering'
+        note: 'Client-side hardware accelerated vector and raster rendering'
       },
       {
         name: 'Python Scientific Stack',
         level: 'competent',
-        note: 'NumPy, SciPy, and Pandas data structures'
+        note: 'NumPy, SciPy, and Pandas vector operations'
+      }
+    ]
+  },
+  {
+    id: 'ai-systems',
+    title: 'Artificial Intelligence',
+    tagline: 'Conversational Systems & Guardrails',
+    projectName: 'AURA',
+    projectSlug: 'aura',
+    description:
+      'Integration of neural architectures, conversational frameworks, and applied machine learning models into operational software.',
+    colSpan: 1,
+    skills: [
+      {
+        name: 'Generative AI Integration',
+        level: 'competent',
+        note: 'Structured JSON schemas and prompt orchestration'
+      },
+      {
+        name: 'Conversational Health Architecture',
+        level: 'competent',
+        note: 'Context management, safety guardrails, and speech synthesis'
+      },
+      {
+        name: 'Tool-Calling AI Assistants',
+        level: 'competent',
+        note: 'Deterministic tool-calling and task-oriented workflow automations'
+      },
+      {
+        name: 'Neural Network Experimentation',
+        level: 'experimental',
+        note: 'Reconstruction loss autoencoders and anomaly scoring'
       }
     ]
   },
   {
     id: 'cybersecurity',
     title: 'Cybersecurity',
+    tagline: 'Intrusion Detection & Threat Graphing',
+    projectName: 'ØMEN',
+    projectSlug: 'omen',
     description:
       'Intrusion detection models, MITRE ATT&CK mapping, adversarial graph analysis, and defensive simulation.',
+    colSpan: 2,
     skills: [
       {
-        name: 'Intrusion Detection',
+        name: 'Intrusion Detection Pipelines',
         level: 'competent',
-        note: 'Statistical flow analysis and anomaly scoring'
+        note: 'Network telemetry flow analysis and anomaly thresholding'
       },
       {
-        name: 'Threat Intelligence',
+        name: 'Threat Modeling & ATT&CK',
         level: 'foundational',
-        note: 'IOC telemetry correlation and threat modeling'
+        note: 'Adversarial tactic mapping and IOC correlation'
       },
       {
         name: 'Attack Graph Visualization',
         level: 'experimental',
-        note: 'Directed acyclic dependency graphs of lateral movement'
+        note: 'Directed acyclic dependency graphs of lateral traversal'
       },
       {
-        name: 'Neural Threat Detection',
+        name: 'Neural Anomaly Detection',
         level: 'experimental',
-        note: 'Unsupervised reconstruction loss for zero-day signals'
+        note: 'Unsupervised reconstruction loss for anomalous traffic detection'
       }
     ]
   },
   {
     id: 'full-stack-development',
     title: 'Full-Stack Development',
+    tagline: 'Type-Safe Distributed Web Systems',
+    projectName: 'GFG REDLINE',
+    projectSlug: 'gfg-redline',
     description:
       'Architecting resilient, type-safe client applications, asynchronous backend APIs, and distributed data layers.',
+    colSpan: 2,
     skills: [
       {
-        name: 'React',
+        name: 'React 19 & Next.js Ecosystem',
         level: 'competent',
-        note: 'Component composition, state management, and custom hooks'
+        note: 'Functional components, hooks, concurrent features, and suspense'
       },
       {
-        name: 'TypeScript',
+        name: 'TypeScript Strict Mode',
         level: 'competent',
-        note: 'Strict typing, generics, and compile-time contract enforcement'
+        note: 'Strict typing, generics, compile-time contract enforcement'
       },
       {
-        name: 'JavaScript (ESNext)',
+        name: 'FastAPI (Python)',
         level: 'competent',
-        note: 'Asynchronous event loops, DOM, and Web APIs'
-      },
-      {
-        name: 'Python',
-        level: 'competent',
-        note: 'Data pipelines, scientific computing, and system utilities'
-      },
-      {
-        name: 'FastAPI',
-        level: 'competent',
-        note: 'Asynchronous REST APIs with Pydantic validation'
-      },
-      {
-        name: 'Electron',
-        level: 'competent',
-        note: 'Desktop native application packaging and IPC protocols'
+        note: 'Asynchronous REST APIs with strict Pydantic validation'
       },
       {
         name: 'Supabase & PostgreSQL',
         level: 'competent',
-        note: 'Relational schemas, RLS policies, and query indexing'
+        note: 'Relational schemas, Row Level Security, and indexed queries'
       },
       {
-        name: 'REST APIs',
+        name: 'Electron Desktop Apps',
         level: 'competent',
-        note: 'Stateless protocol design, auth headers, and endpoint versioning'
+        note: 'Desktop native packaging and IPC communication channels'
       }
     ]
   },
   {
     id: 'design-product',
     title: 'Design & Product Development',
+    tagline: 'Design Systems & Edge Architecture',
+    projectName: 'ONE PLANET',
+    projectSlug: 'one-planet',
     description:
-      'Crafting cohesive visual languages, typography hierarchies, vector identity assets, and interactive software interfaces.',
+      'Crafting cohesive visual languages, typography hierarchies, vector identity assets, and production web interfaces.',
+    colSpan: 1,
     skills: [
       {
-        name: 'Figma',
+        name: 'Figma Design Systems',
         level: 'competent',
-        note: 'Component libraries, design tokens, wireframing, and interactive prototypes'
+        note: 'Tokens, auto-layout, wireframes, and interactive micro-interactions'
       },
       {
-        name: 'Adobe Illustrator',
+        name: 'UI/UX Information Architecture',
         level: 'competent',
-        note: 'Vector brand marks, iconography, and technical illustration'
+        note: 'Human-centered workflows, accessibility, and responsive typography'
       },
       {
-        name: 'UI/UX Design',
+        name: 'Git Version Control Disciplines',
         level: 'competent',
-        note: 'Information architecture, responsive layouts, and user flows'
+        note: 'Branching strategies, atomic commits, and repository hygiene'
       },
       {
-        name: 'Interactive Interfaces',
+        name: 'Vercel Edge Deployment',
         level: 'competent',
-        note: 'Micro-interactions, state feedback, and motion transitions'
-      },
-      {
-        name: 'Git & GitHub',
-        level: 'competent',
-        note: 'Branching workflows, version control discipline, and CI checks'
-      },
-      {
-        name: 'Vercel Deployment',
-        level: 'competent',
-        note: 'Edge routing, serverless build environments, and web vitals'
+        note: 'Preview environments, production edge hosting, and web performance'
       }
     ]
   }
