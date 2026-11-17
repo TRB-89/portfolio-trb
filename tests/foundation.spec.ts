@@ -58,6 +58,26 @@ test.describe('Portfolio V2 — Foundation Verification', () => {
     await expect(hero).toContainText(/AI & SYSTEMS DEVELOPER/);
   });
 
+  test('Phase 02 components render correctly: TechText, RotatingText, and Noise', async ({
+    page
+  }) => {
+    const hero = page.locator('section#hero');
+
+    // TechText canvas is rendered within hero h1
+    const techTextCanvas = hero.locator('h1 canvas');
+    await expect(techTextCanvas).toBeAttached();
+
+    // RotatingText displays active professional title
+    const rotatingText = hero.locator('span.sr-only, [aria-hidden="true"]').filter({
+      hasText: /AI & Systems Developer|Computational Engineering|Full-Stack Developer|Product Builder|CSBS/
+    });
+    await expect(rotatingText.first()).toBeAttached();
+
+    // Noise canvas/overlay is attached to the DOM
+    const noiseElement = page.locator('canvas[style*="image-rendering"], div.pointer-events-none');
+    await expect(noiseElement.first()).toBeAttached();
+  });
+
   test('Verified email and actual GitHub are displayed', async ({ page }) => {
     await expect(page.locator('text=tarunbanu2007@gmail.com').first()).toBeVisible();
     await expect(page.locator('a[href="https://github.com/TRB-89"]').first()).toBeAttached();

@@ -11,10 +11,14 @@ import { Achievements } from './sections/Achievements';
 import { CurrentWork } from './sections/CurrentWork';
 import { Contact } from './sections/Contact';
 import { ErrorBoundary } from './components/shared/ErrorBoundary';
+import Noise from './components/reactbits/Noise';
 
 export const App: React.FC = () => {
   return (
     <div className="relative flex min-h-screen flex-col justify-between bg-background text-foreground antialiased selection:bg-metallic selection:text-background">
+      {/* Cinematic Background Film Grain */}
+      <Noise opacity={0.03} fixed={true} zIndex={15} />
+
       {/* Primary Sticky Navigation */}
       <Navigation />
 

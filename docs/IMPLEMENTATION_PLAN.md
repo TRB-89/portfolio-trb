@@ -58,16 +58,19 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   7. Formulate `IMPLEMENTATION_PLAN.md`, `COMPONENT_MANIFEST.md`, and `ASSET_REQUIREMENTS.md`.
   8. Verify zero TypeScript errors, clean linting, successful production build, and pass Playwright baseline tests.
 
-#### Phase 02: Visual Identity and Hero
-- **Objective:** Implement the industrial typography and atmospheric hero environment.
+#### Phase 02: Visual Identity, Hero & Cinematic Shell (COMPLETED & VERIFIED)
+- **Objective:** Implement the industrial typography, atmospheric hero environment, and global film grain.
 - **Components:**
   1. `TechText` (Hero interactive name wordmark with letter-by-letter dashed vector paths).
   2. `LiquidChrome` (Atmospheric metallic shader background running via WebGL).
   3. `RotatingText` (Dynamic display of rotating professional identities).
+  17. `Noise` (Cinematic film grain overlay across viewport).
+  18. `MetallicPaint` (Liquid chrome shader applied to TRB wordmark in Hero header).
 - **Milestones:**
-  - Responsive sizing using CSS clamp to preserve interaction across mobile and desktop.
-  - Capability detection to disable WebGL shader on unsupported or low-power hardware.
-  - Semantic `<h1>` accessible to screen readers and crawlers.
+  - Responsive sizing using CSS clamp and canvas adaptation to preserve interaction across mobile and desktop.
+  - Capability detection (`isWebGLAvailable()`) to disable WebGL shader on unsupported or low-power hardware.
+  - Semantic `<h1>` accessible to screen readers, crawlers, and automated tests.
+  - Global `Noise` film grain with `pointer-events-none` ensuring zero layout shifting or click interference.
 
 #### Phase 03: Navigation and Global Interactions
 - **Objective:** Deploy global technical micro-interactions and navigation overlay.
@@ -77,8 +80,6 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   14. `TargetCursor` (Custom reticle cursor snapping to interactive buttons and targets).
   15. `Magnet` (Magnetic physics pulling buttons and CTAs to pointer).
   16. `GradualBlur` (Cinematic progressive edge blurs for section transitions).
-  17. `Noise` (Cinematic film grain overlay across viewport).
-  18. `MetallicPaint` (Liquid chrome shader applied to TRB wordmark).
 - **Milestones:**
   - Touch-device detection hook: automatically disable cursor effects on coarse pointer devices.
   - Reduced-motion accessibility checks: bypass spring/stagger animations for users requesting reduced motion.

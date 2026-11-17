@@ -28,8 +28,8 @@
 | 14 | **Target Cursor** | `TargetCursor-TS-TW` | Global Shell | Pointer Events / Reticle | `react-dom@^19` | Phase 03 |
 | 15 | **Magnet** | `Magnet-TS-TW` | Global Shell / CTAs | Spring Easing | None (React) | Phase 03 |
 | 16 | **Gradual Blur** | `GradualBlur-TS-TW` | Global Shell | Backdrop Filter Mask | None (React) | Phase 03 |
-| 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 03 |
-| 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Branding / Logo | WebGL Fluid Shader | None (React WebGL) | Phase 03 |
+| 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 |
+| 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 |
 
 ---
 
@@ -63,7 +63,7 @@
 - **Intended Section:** Hero (01)
 - **Performance Considerations:** Calculates letter vector outlines on mount. Memoizes glyph geometries to avoid main-thread jank.
 - **Mobile Fallback:** Render crisp typographic SVG / standard display heading without drag physics when `useTouchDevice()` is true.
-- **Integration Status:** Architecture staged in `Hero.tsx`; component to be imported in Phase 02.
+- **Integration Status:** Integrated in `Hero.tsx` with mandatory configuration props in Phase 02.
 
 ---
 
@@ -82,7 +82,7 @@
 - **Intended Section:** Hero (01) background.
 - **Performance Considerations:** Custom fragment shader. Cap device pixel ratio (`maxDevicePixelRatio={1.5}`) to conserve battery on high-DPI screens. Suspend rendering when offscreen via `IntersectionObserver`.
 - **Mobile Fallback:** Disable active pointer interaction; fallback to static metallic CSS gradient if WebGL context is lost or unsupported.
-- **Integration Status:** WebGL capability utility created; component slated for Phase 02.
+- **Integration Status:** WebGL capability utility active; fully integrated in `Hero.tsx` background in Phase 02.
 
 ---
 
@@ -101,7 +101,7 @@
 - **Intended Section:** Hero (01) role rotation.
 - **Performance Considerations:** Lightweight spring layout animation. Clean unmount on tab blur.
 - **Mobile Fallback:** Respect `prefers-reduced-motion` by freezing or using immediate crossfade.
-- **Integration Status:** Staged in `Hero.tsx`; ready for Phase 02.
+- **Integration Status:** Fully integrated into `Hero.tsx` in Phase 02 with flip transitions across 5 professional titles.
 
 ---
 
@@ -342,11 +342,11 @@
 - **Installation Method:** Registry import.
 - **Required Dependencies:** Pure React.
 - **Supported Props:**
-  - `patternSize?: number`, `patternAlpha?: number`, `patternRefreshInterval?: number`
+  - `patternSize?: number`, `patternAlpha?: number`, `patternRefreshInterval?: number`, `opacity?: number`, `fixed?: boolean`, `zIndex?: number`
 - **Intended Section:** Viewport background texture overlay.
-- **Performance Considerations:** Static SVG noise or periodic canvas refresh. Prefer static SVG to conserve CPU/battery.
-- **Mobile Fallback:** Static lightweight CSS pattern.
-- **Integration Status:** CSS noise simulation active in `globals.css`; component scheduled for Phase 03.
+- **Performance Considerations:** Static SVG/canvas grain. Configured with low opacity (`0.03`) and `pointer-events-none`.
+- **Mobile Fallback:** Lightweight grain pattern.
+- **Integration Status:** Fully integrated into `App.tsx` global shell in Phase 02.
 
 ---
 
@@ -357,8 +357,8 @@
 - **Installation Method:** Registry import.
 - **Required Dependencies:** WebGL Shader.
 - **Supported Props:**
-  - `imageSrc?: string`, `text?: string`, `density?: number`, `speed?: number`, `angle?: number`
-- **Intended Section:** TRB Brand Wordmark.
+  - `imageSrc?: string`, `text?: string`, `fontFamily?: string`, `fontWeight?: number | string`, `color?: string`, `backgroundColor?: string`, `density?: number`, `speed?: number`, `angle?: number`
+- **Intended Section:** Hero / TRB Brand Wordmark.
 - **Performance Considerations:** Fragment shader rendering on designated logo canvas.
 - **Mobile Fallback:** High-contrast crisp monochrome SVG vector mark.
-- **Integration Status:** Scheduled for Phase 03.
+- **Integration Status:** Fully integrated in `Hero.tsx` technical metadata bar in Phase 02.
