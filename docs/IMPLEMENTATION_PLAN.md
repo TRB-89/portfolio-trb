@@ -11,7 +11,7 @@
 
 ### Executive Architectural Overview
 
-This document outlines the nine-stage engineering roadmap migrating Tarun R.'s portfolio from a single-file legacy document into a modular, production-grade React + TypeScript application with 18 locked React Bits interactive components, WebGL hardware acceleration, and an Opium / Industrial Minimalist monochrome design language.
+This document outlines the nine-stage engineering roadmap migrating Tarun R.'s portfolio from a single-file legacy document into a modular, production-grade React + TypeScript application with 18 locked React Bits interactive components, WebGL/OGL hardware acceleration, and an Opium / Industrial Minimalist monochrome design language.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -22,7 +22,7 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
 │  ┌──────────────────────────── 8 SECTIONS ────────────────────────────────┐ │
 │  │ 01 Hero (TechText / LiquidChrome / RotatingText)                       │ │
 │  │ 02 About (Lanyard 3D / ScrollReveal)                                   │ │
-│  │ 03 Selected Work (Circular Carousel 3D Cylinder / Fallback Grid)       │ │
+│  │ 03 Selected Work (Flex Carousel Expanding Panels / Fallback Catalogue) │ │
 │  │ 04 Case Studies (ScrollStack / Parallax & Vortex Deep Dives)           │ │
 │  │ 05 Technical Arsenal (LogoLoop / MagicBento)                           │ │
 │  │ 06 Achievements (CountUp / AnimatedList)                               │ │
@@ -38,7 +38,7 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
 
 ### Phase Roadmap
 
-#### Phase 01: Foundation and Architecture (CURRENT EXECUTION)
+#### Phase 01: Foundation and Architecture (COMPLETED & VERIFIED)
 - **Objective:** Establish the clean, scalable foundation for the entire v2 application.
 - **Milestones:**
   1. Git repository verification, clean safety isolation on `feat/portfolio-v2`, preserving legacy portfolio in git history.
@@ -92,15 +92,24 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   - Asset pipeline for personal portrait texture, RIT department card details, and nylon strap textures.
   - Graceful static fallback card when WebGL context or Three.js fails.
 
-#### Phase 05: Circular Carousel Project Showcase
-- **Objective:** Deploy the primary cylindrical project showcase for Tarun's software systems.
-- **Components:**
-  8. `CircularCarousel` (3D ring with bendable cards, momentum drag, snapping, and click-to-focus).
+#### Phase 05: Interactive Flex Carousel Project Showcase (UPDATED)
+- **Objective:** Deploy the primary interactive horizontal expanding panel showcase for Tarun's software systems.
+- **Component:**
+  8. `FlexCarousel` (Interactive horizontal expanding panels with smooth fluid collapse/expand mechanics).
 - **Milestones:**
-  - Configuration strictly matching intended specification:
-    - `preset="cylinder"`, `cardWidth=220`, `aspectRatio=1`, `speed=14`, `tilt=-5`, `curve=1`, `perspective=2500`, `direction="left"`, `depthFade=0.55`, `fadeColor="#000000"`.
-  - Accessible parallel list view for keyboard navigation, mobile touchscreens, and screen readers.
-  - Category filtering by domain.
+  - Horizontal expanding project panels where clicking or hovering an initiative expands it into a visually dominant layout (`flex-[3.5]`) while smoothly collapsing neighboring panels (`flex-[0.8]`).
+  - Active project panel displays:
+    - High-contrast project cover schematic / artwork.
+    - Active project title, domain, and status badges.
+    - Full technical description and highlights.
+    - Technology stack tags.
+    - Verified repository and live demo links.
+  - Collapsed neighboring panels present rotated vertical identity labels and expand smoothly upon user interaction.
+  - Pure black background (`#050505`), monochrome typography, restrained `#262626` borders, and subtle easing (`ease-industrial`).
+  - Zero circular carousel, cylinder, perspective, rotation, or depth-fade dependencies.
+  - Complete keyboard accessibility (Tab focus, Enter/Space/Arrow key selection).
+  - Touch-friendly mobile layout (vertical accordion cards on mobile viewports).
+  - Reduced-motion support via `useReducedMotion()`.
 
 #### Phase 06: Engineering Case Studies
 - **Objective:** Deep-dive into technical architectures for flagship initiatives.

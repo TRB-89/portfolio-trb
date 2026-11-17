@@ -68,6 +68,26 @@ test.describe('Portfolio V2 — Foundation Verification', () => {
     await expect(linkedInFeed).toHaveCount(0);
   });
 
+  test('Flex Carousel showcase stage is present with interactive expanding panels', async ({
+    page
+  }) => {
+    const showcaseStage = page.locator('div[aria-label="Flex Carousel Interactive Project Showcase"]');
+    await expect(showcaseStage).toBeVisible();
+
+    const panels = page.locator('div[aria-label="Interactive Expanding Project Panels"] > div[role="button"]');
+    await expect(panels.first()).toBeVisible();
+    const count = await panels.count();
+    expect(count).toBeGreaterThan(1);
+
+    // Initial state: first panel is expanded
+    await expect(panels.first()).toHaveAttribute('aria-expanded', 'true');
+
+    // Click on second panel to verify smooth expansion
+    await panels.nth(1).click();
+    await expect(panels.nth(1)).toHaveAttribute('aria-expanded', 'true');
+    await expect(panels.first()).toHaveAttribute('aria-expanded', 'false');
+  });
+
   test('No horizontal scrolling / overflow on mobile viewport', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);

@@ -8,7 +8,7 @@
 
 ---
 
-### Master Component Matrix
+### Master Component Matrix (18 Locked Components)
 
 | ID | Component Name | Registry Identifier | Target Section | Primary Engine | Dependencies | Phase |
 |---|---|---|---|---|---|---|
@@ -19,7 +19,7 @@
 | 05 | **Dock** | `Dock-TS-TW` | Navigation / Shell | React DOM Springs | `react-dom@^19` | Phase 03 |
 | 06 | **Lanyard** | `Lanyard-TS-TW` | About (02) | Three.js / Verlet Physics | `three@^0.174` | Phase 04 |
 | 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 |
-| 08 | **Circular Carousel** | `CircularCarousel-TS-TW` | Selected Work (03) | CSS 3D Transforms / Drag | None (React) | Phase 05 |
+| 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 |
 | 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 |
 | 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 |
 | 11 | **Magic Bento** | `MagicBento-TS-TW` | Technical Arsenal (05) | Pointer Spotlight / Tilt | Lucide / Internal SVGs | Phase 07 |
@@ -61,9 +61,9 @@
   - `guides?: boolean` (false)
   - `className?: string`, `style?: CSSProperties`
 - **Intended Section:** Hero (01)
-- **Performance Considerations:** Calculates letter vector outlines on mount. Offload calculation or memoize glyph geometries to avoid main-thread jank.
-- **Mobile Fallback:** Render clean crisp typographic SVG / standard display heading without drag physics when `useTouchDevice()` is true.
-- **Integration Status:** Architecture staged in `Hero.tsx`; component file to be imported in Phase 02.
+- **Performance Considerations:** Calculates letter vector outlines on mount. Memoizes glyph geometries to avoid main-thread jank.
+- **Mobile Fallback:** Render crisp typographic SVG / standard display heading without drag physics when `useTouchDevice()` is true.
+- **Integration Status:** Architecture staged in `Hero.tsx`; component to be imported in Phase 02.
 
 ---
 
@@ -80,7 +80,7 @@
   - `interactive?: boolean`, `rippleStrength?: number`, `rippleSize?: number`, `tilt?: number`
   - `intro?: boolean`, `lightMode?: boolean`, `maxDevicePixelRatio?: number`
 - **Intended Section:** Hero (01) background.
-- **Performance Considerations:** Uses custom fragment shader. Cap device pixel ratio (`maxDevicePixelRatio={1.5}`) to save battery on high-DPI retina screens. Pause rendering when out of viewport via `IntersectionObserver`.
+- **Performance Considerations:** Custom fragment shader. Cap device pixel ratio (`maxDevicePixelRatio={1.5}`) to conserve battery on high-DPI screens. Suspend rendering when offscreen via `IntersectionObserver`.
 - **Mobile Fallback:** Disable active pointer interaction; fallback to static metallic CSS gradient if WebGL context is lost or unsupported.
 - **Integration Status:** WebGL capability utility created; component slated for Phase 02.
 
@@ -93,7 +93,7 @@
 - **Installation Method:** `npx shadcn@latest add @react-bits/RotatingText-TS-TW`
 - **Required Dependencies:** `motion@^12.23.12`
 - **Supported Props:**
-  - `texts: string[]` (e.g. `["AI & Systems Developer", "Computational Engineering Enthusiast", ...]`)
+  - `texts: string[]` (`["AI & Systems Developer", "Computational Engineering Enthusiast", ...]`)
   - `transition?: Transition`, `effect?: 'slide' | 'flip' | 'blur' | 'scale' | 'drop'`
   - `direction?: 'up' | 'down'`, `highlight?: boolean`, `highlightColor?: string`
   - `rotationInterval?: number`, `staggerDuration?: number`, `loop?: boolean`, `auto?: boolean`
@@ -133,7 +133,7 @@
   - `items?: DockItem[]`, `className?: string`, `spring?: SpringConfig`
   - `magnification?: number`, `distance?: number`, `panelHeight?: number`
 - **Intended Section:** Global Quick-Action Dock (Screen bottom).
-- **Performance Considerations:** Calculates pointer proximity using requestAnimationFrame. Suppress listener when cursor is far from dock.
+- **Performance Considerations:** Calculates pointer proximity using requestAnimationFrame. Suppresses listener when cursor is far from dock.
 - **Mobile Fallback:** Uniform-sized icon dock without hover magnification.
 - **Integration Status:** `SocialDock.tsx` built with accessible links; magnification spring scheduled for Phase 03.
 
@@ -166,30 +166,46 @@
   - `children: ReactNode`, `enableBlur?: boolean`, `baseOpacity?: number`, `blurStrength?: number`
   - `stagger?: number`, `splitBy?: RevealSplit`, `highlightColor?: string`
 - **Intended Section:** About Me (02) biographical text.
-- **Performance Considerations:** SplitText / Word unblurring via CSS opacity and filter blur.
+- **Performance Considerations:** Word unblurring via CSS opacity and filter blur.
 - **Mobile Fallback:** Immediate opacity reveal without continuous scrub blur.
 - **Integration Status:** Staged in `About.tsx`; GSAP ScrollTrigger wiring in Phase 04.
 
 ---
 
-#### 8. Circular Carousel
-- **Official Name:** CircularCarousel
-- **Source URL:** https://reactbits.dev/components/circular-carousel
-- **Registry:** `https://reactbits.dev/r/CircularCarousel-TS-TW.json`
-- **Installation Method:** Registry import.
-- **Required Dependencies:** Pure React + CSS 3D Transforms.
-- **Supported Props (Strict Section 7 Match):**
-  - `items?: CircularCarouselItem[]`
-  - `preset?: 'cylinder'`
-  - `intro?: 'rise'`
-  - `cardWidth?: 220`, `aspectRatio?: 1`, `gap?: 25`, `curve?: 1`, `tilt?: -5`
-  - `perspective?: 2500`, `autoplay?: 'drift'`, `speed?: 14`, `interval?: 3`, `direction?: 'left'`
-  - `draggable?: true`, `momentum?: 0.6`, `snap?: true`, `pauseOnHover?: true`, `focusOnClick?: true`
-  - `parallax?: 0.3`, `stretch?: 0.5`, `fadeColor?: '#000000'`, `depthFade?: 0.55`, `innerShade?: 0.6`, `cornerRadius?: 12`
-- **Intended Section:** Selected Work (03).
-- **Performance Considerations:** Uses 3D transform matrices with hardware acceleration (`translate3d`, `rotateY`). Low CPU overhead.
-- **Mobile Fallback:** Accessible responsive grid below carousel; touch-swipe gestures enabled.
-- **Integration Status:** Staging container and accessible fallback catalog live in `Projects.tsx`; full cylinder component in Phase 05.
+#### 8. Flex Carousel (REPLACES CIRCULAR CAROUSEL)
+- **Official Name:** FlexCarousel
+- **Source URL:** https://reactbits.dev/components/flex-carousel
+- **Registry:** `https://reactbits.dev/r/FlexCarousel-TS-TW.json`
+- **Installation Method:** `npx shadcn@latest add @react-bits/FlexCarousel-TS-TW` or direct component placement.
+- **Required Dependencies:** `ogl@^1.0.11`
+- **Supported Props:**
+  - `items?: FlexCarouselItem[]` (`src`, `alt`, `title`, `subtitle`)
+  - `preset?: 'liquid' | 'ribbon' | 'vortex' | 'arch'`
+  - `intro?: 'rise' | 'bloom' | 'spin' | 'deal' | 'none'`
+  - `cardHeight?: number`
+  - `gap?: number`
+  - `radius?: number`
+  - `fit?: 'natural' | 'portrait' | 'square' | 'landscape'`
+  - `squeeze?: number`
+  - `focusOnClick?: boolean`
+  - `autoplay?: boolean`
+  - `interval?: number`
+  - `captions?: boolean`
+  - `captureWheel?: boolean`
+  - `onChange?: (index: number, item: FlexCarouselItem) => void`
+  - `onSelect?: (index: number, item: FlexCarouselItem) => void`
+  - `className?: string`, `style?: CSSProperties`
+- **Showcase Architecture:**
+  - Horizontal expanding project panels (`flex-[3.5]` active vs `flex-[0.8]` collapsed).
+  - Smooth expansion and collapse transitions (`duration-500 ease-industrial`).
+  - Active panel displays full project cover artwork, title, engineering domain, detailed descriptions, technical stack tags, and repository/live demo links.
+  - Collapsed neighboring panels present clean vertical headings and expand on hover, click, or keyboard focus.
+  - Pure black background (`#050505`), monochrome typography, restrained `#262626` borders, subtle transitions.
+  - Zero cylinder, perspective, rotation, depth-fade, or circular carousel geometry.
+- **Keyboard Accessibility:** Fully focusable with Tab, expandable via Enter, Space, and Arrow keys.
+- **Mobile Fallback:** Touch-friendly vertical stack / accordion expansion with automatic swipe handling.
+- **Reduced Motion:** Eliminates transition delays when `prefers-reduced-motion` is detected.
+- **Integration Status:** Interactive horizontal expanding stage and accessible secondary catalogue live in `Projects.tsx`; OGL-enhanced flex fluid transitions scheduled for Phase 05.
 
 ---
 
@@ -267,7 +283,7 @@
   - `to: number`, `from?: number`, `duration?: number`, `delay?: number`
   - `prefix?: string`, `suffix?: string`, `separator?: string`, `trigger?: 'view' | 'load'`
 - **Intended Section:** Achievements and Milestones (06).
-- **Performance Considerations:** Framer motion animate value hook; triggers only on viewport intersection.
+- **Performance Considerations:** Motion animate value hook; triggers only on viewport intersection.
 - **Mobile Fallback:** Static numeric display when reduced motion is preferred.
 - **Integration Status:** Metric data model configured in `Achievements.tsx`; animated counter in Phase 07.
 
@@ -283,7 +299,7 @@
   - `targetSelector?: string`, `cursorColor?: string`, `size?: number`, `cornerSize?: number`
   - `spinDuration?: number`, `hoverDuration?: number`, `hideDefaultCursor?: boolean`
 - **Intended Section:** Global Application Shell.
-- **Performance Considerations:** Uses direct mousemove listeners with transform translates. Must be entirely disabled on touch devices.
+- **Performance Considerations:** Pointermove listeners with transform translates. Must be entirely disabled on touch devices.
 - **Mobile Fallback:** Completely disabled via `useTouchDevice()`.
 - **Integration Status:** Touch detection hook ready; cursor element scheduled for Phase 03.
 
@@ -312,8 +328,8 @@
 - **Required Dependencies:** Pure React.
 - **Supported Props:**
   - `position?: 'top' | 'bottom' | 'both'`, `strength?: number`, `layers?: number`, `opacity?: number`
-- **Intended Section:** Sticky header edges and carousel boundaries.
-- **Performance Considerations:** Uses layered CSS backdrop-filter masks.
+- **Intended Section:** Sticky header edges and showcase boundaries.
+- **Performance Considerations:** Layered CSS backdrop-filter masks.
 - **Mobile Fallback:** Single lightweight blur overlay to prevent GPU memory pressure.
 - **Integration Status:** Scheduled for Phase 03.
 
