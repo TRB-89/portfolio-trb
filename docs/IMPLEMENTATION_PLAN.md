@@ -132,14 +132,22 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   - Automated testing: 20 test cases across Chromium & Mobile Chrome in `tests/projects-showcase.spec.ts`. Master suite expanded to 92 automated tests with 100% pass rate (88 passed, 4 desktop-only skipped on mobile).
   - Visual QA verification: captured and visually inspected desktop expanded dossier (`10-desktop-flex-carousel-expanded.png`), neighbor panel collapse (`11-desktop-flex-carousel-neighbor.png`), mobile stacked accordion (`12-mobile-flex-carousel-stacked.png`), and 3D OGL Reel (`13-desktop-flex-carousel-3d-reel.png`).
 
-#### Phase 06: Engineering Case Studies
-- **Objective:** Deep-dive into technical architectures for flagship initiatives.
-- **Components:**
-  9. `ScrollStack` (Cards pin and stack neatly as you scroll, settling into a dimmed deck).
+#### Phase 06: Engineering Case Studies & ScrollStack (COMPLETED & VERIFIED)
+- **Objective:** Deep-dive into technical architectures, tradeoffs, and system boundaries for flagship initiatives using official React Bits `ScrollStack`.
+- **Component:**
+  9. `ScrollStack` (Cards pin and stack naturally as you scroll on desktop with controlled scale and dimming; clean sequential presentation on mobile and reduced-motion).
 - **Milestones:**
-  - Deep dive 1: PARALLAX (Geospatial SAR processing, Rasterio, NASA Earthdata pipelines).
-  - Deep dive 2: VORTEX (GPU optimization solver, CUDA CSR kernels, memory bandwidth analysis).
-  - Deep dive 3: ØMEN (Intelligent threat detection, DAG attack simulation graphs).
+  - Integrated official React Bits `ScrollStack.tsx` (`ScrollStack` and `ScrollStackItem`) with pure React dependency footprint.
+  - Authored strongly-typed `src/data/caseStudies.ts` with comprehensive schemas (`CaseStudy`, `ArchitectureStep`, `CaseStudyDecision`) supporting independent content management without touching presentation code.
+  - Deep dive 1: **PARALLAX** (Geospatial SAR processing, Rasterio, NumPy, NASA Earthdata authentication, NASA OPERA DSWE cross-sensor comparison, 7-stage processing pipeline separating implemented vs planned stages, honest disclosures with zero fabricated flood routing claims).
+  - Deep dive 2: **VORTEX** (GPU optimization solver, Compressed Sparse Row (CSR) storage format, parallel CUDA warp-reduction intrinsics `__shfl_down_sync`, automated CPU fallback, memory bandwidth saturation, microbenchmark SpMV speedups with clear end-to-end PCIe overhead caveats).
+  - Deep dive 3: **ØMEN** (Topological attack graph parser, Directed Acyclic Graph (DAG) reachability algorithms, multi-hop breach simulation, neural anomaly scoring heuristics, SOC analyst dashboard, no false enterprise-grade claims).
+  - Deep dive 4: **VESPER** (Systems engineering architecture preserved with understated documentation-pending status, formal interface modeling, and strict benchmark withholding policy).
+  - Configured `ScrollStack` with `useWindowScroll={true}`, `smoothScroll={false}` (zero scroll hijacking), `itemScale={0.03}`, `dimAmount={0.15}`, `blurAmount={0}` (100% crisp typography), `tiltAmount={0}`, and `rotationAmount={0}`.
+  - Mobile & Reduced-Motion Fallback: automatically switches to a clean vertical sequential presentation on mobile devices and when `prefers-reduced-motion` is active.
+  - Quick index selector tabs (`PARALLAX`, `VORTEX`, `ØMEN`, `VESPER`) allowing rapid random-access jumping between case study dossiers.
+  - Automated testing: 30 dedicated automated tests in `tests/case-studies-scrollstack.spec.ts`. Master suite expanded to 122 automated Playwright tests with 100% pass rate (116 passed, 6 device-specific skips).
+  - Visual QA verification: captured and visually inspected desktop case study intro (`14-desktop-case-studies-intro.png`), PARALLAX case study (`15-desktop-case-study-parallax.png`), VORTEX case study (`16-desktop-case-study-vortex.png`), ScrollStack transition state (`17-desktop-scrollstack-transition.png`), final stacked card (`18-desktop-case-study-final-card.png`), mobile sequential presentation (`19-mobile-case-studies-sequential.png`), and reduced-motion fallback (`20-desktop-case-studies-reduced-motion.png`).
 
 #### Phase 07: Technical Expertise and Achievements
 - **Objective:** Showcase technical capabilities and verified track record.

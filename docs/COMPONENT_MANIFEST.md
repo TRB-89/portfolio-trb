@@ -20,7 +20,7 @@
 | 06 | **Lanyard** | `Lanyard-TS-TW` | About (02) | Three.js / Verlet Physics | `three@^0.174` | Phase 04 | **INTEGRATED** |
 | 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 | **INTEGRATED** |
 | 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 | **INTEGRATED** |
-| 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 | SCHEDULED |
+| 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 | **INTEGRATED** |
 | 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 | SCHEDULED |
 | 11 | **Magic Bento** | `MagicBento-TS-TW` | Technical Arsenal (05) | Pointer Spotlight / Tilt | Lucide / Internal SVGs | Phase 07 | SCHEDULED |
 | 12 | **Animated List** | `AnimatedList-TS-TW` | Achievements (06) | CSS Spring / Selection | Lucide / Internal SVGs | Phase 07 | SCHEDULED |
@@ -31,7 +31,7 @@
 | 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 | **INTEGRATED** |
 | 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 | **INTEGRATED** |
 
-**Integration Progress:** 13 of 18 components integrated (72.2% locked component coverage). All 13 active components verified via automated Playwright testing.
+**Integration Progress:** 14 of 18 components integrated (77.8% locked component coverage). All 14 active components verified via automated Playwright testing.
 
 ---
 
@@ -215,15 +215,29 @@
 - **Official Name:** ScrollStack
 - **Source URL:** https://reactbits.dev/components/scroll-stack
 - **Registry:** `https://reactbits.dev/r/ScrollStack-TS-TW.json`
-- **Installation Method:** Registry import.
-- **Required Dependencies:** Pure React.
+- **Installation Method:** Direct verified TypeScript placement under `src/components/reactbits/ScrollStack.tsx`.
+- **Required Dependencies:** Pure React (no external animation libraries required).
 - **Supported Props:**
-  - `children?: ReactNode`, `itemDistance?: number`, `itemStackDistance?: number`
-  - `stackPosition?: number | string`, `itemScale?: number`, `dimAmount?: number`, `blurAmount?: number`
+  - `children?: ReactNode`
+  - `className?: string`
+  - `itemDistance?: number` (Default: 100, Configured: 80)
+  - `itemStackDistance?: number` (Default: 24, Configured: 20)
+  - `stackPosition?: number | string` (Default: '15%', Configured: '12%')
+  - `itemScale?: number` (Default: 0.05, Configured: 0.03)
+  - `baseScale?: number` (Default: 0.8, Configured: 0.88)
+  - `dimAmount?: number` (Default: 0.2, Configured: 0.15)
+  - `blurAmount?: number` (Default: 0, Configured: 0 — zero text blur)
+  - `tiltAmount?: number` (Default: 0, Configured: 0 — no perspective tilt)
+  - `rotationAmount?: number` (Default: 0, Configured: 0 — no typography rotation)
+  - `holdDistance?: number` (Default: 200, Configured: 180)
+  - `smoothScroll?: boolean` (Default: true, Configured: false — zero scroll hijacking)
+  - `snap?: boolean` (Default: false)
+  - `useWindowScroll?: boolean` (Default: false, Configured: true — native window scroll integration)
+  - `onStackComplete?: () => void`
 - **Intended Section:** Engineering Case Studies (04).
-- **Performance Considerations:** Passive scroll observer with CSS sticky positioning. Zero scroll hijacking.
-- **Mobile Fallback:** Standard vertical card stack.
-- **Integration Status:** Container and card models ready in `CaseStudies.tsx`; stack pinning in Phase 06.
+- **Performance Considerations:** Passive scroll observer with CSS sticky positioning. `smoothScroll={false}` ensures zero wheel interception or scroll hijacking. Offscreen animation suppression via `cancelAnimationFrame` and `ResizeObserver`.
+- **Mobile Fallback:** Clean responsive vertical sequential cards on mobile viewports (`window.innerWidth < 1024` or coarse pointer) and on reduced-motion preference (`prefers-reduced-motion: reduce`).
+- **Integration Status:** Fully integrated in `src/components/reactbits/ScrollStack.tsx` and orchestrated in `src/sections/CaseStudies.tsx` during Phase 06. Features all 4 flagship case studies (`PARALLAX`, `VORTEX`, `ØMEN`, and `VESPER`) with complete problem-solution friction dossiers, accessible SVG/HTML architecture pipeline stages, engineering tradeoff decisions, verified results vs limitations, quick index selector tabs, and 30 automated tests in `tests/case-studies-scrollstack.spec.ts`.
 
 ---
 

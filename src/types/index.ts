@@ -83,3 +83,42 @@ export interface TechnicalMetric {
   description: string;
   verified: boolean;
 }
+
+export interface ArchitectureStep {
+  step: string;
+  label: string;
+  description: string;
+  status: 'implemented' | 'planned' | 'experimental' | 'pending';
+}
+
+export interface CaseStudyDecision {
+  decision: string;
+  tradeoff: string;
+  rationale: string;
+}
+
+export interface CaseStudy {
+  id: string;
+  projectId: string;
+  number: string;
+  title: string;
+  subtitle: string;
+  domain: string;
+  summary: string;
+  problemStatement: string;
+  solution: string;
+  architectureDescription: string;
+  architecturePipeline: ArchitectureStep[];
+  technologies: string[];
+  engineeringChallenges: string[];
+  implementationDecisions: CaseStudyDecision[];
+  verifiedResults: string[];
+  limitations: string[];
+  status: ProjectStatus;
+  verificationStatus: VerificationStatus;
+  repositoryUrl?: string;
+  liveDemoUrl?: string;
+  supportingEvidence?: string;
+  competitionAssociation?: string;
+  isPendingDocumentation?: boolean;
+}
