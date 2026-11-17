@@ -19,7 +19,7 @@
 | 05 | **Dock** | `Dock-TS-TW` | Navigation / Shell | React DOM Springs | `react-dom@^19` | Phase 03 | **INTEGRATED** |
 | 06 | **Lanyard** | `Lanyard-TS-TW` | About (02) | Three.js / Verlet Physics | `three@^0.174` | Phase 04 | **INTEGRATED** |
 | 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 | **INTEGRATED** |
-| 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 | STAGED |
+| 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 | **INTEGRATED** |
 | 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 | SCHEDULED |
 | 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 | SCHEDULED |
 | 11 | **Magic Bento** | `MagicBento-TS-TW` | Technical Arsenal (05) | Pointer Spotlight / Tilt | Lucide / Internal SVGs | Phase 07 | SCHEDULED |
@@ -31,7 +31,7 @@
 | 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 | **INTEGRATED** |
 | 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 | **INTEGRATED** |
 
-**Integration Progress:** 12 of 18 components integrated (66.7% locked component coverage). All 12 active components verified via automated Playwright testing.
+**Integration Progress:** 13 of 18 components integrated (72.2% locked component coverage). All 13 active components verified via automated Playwright testing.
 
 ---
 
@@ -207,7 +207,7 @@
 - **Keyboard Accessibility:** Fully focusable with Tab, expandable via Enter, Space, and Arrow keys.
 - **Mobile Fallback:** Touch-friendly vertical stack / accordion expansion with automatic swipe handling.
 - **Reduced Motion:** Eliminates transition delays when `prefers-reduced-motion` is detected.
-- **Integration Status:** Interactive horizontal expanding stage and accessible secondary catalogue live in `Projects.tsx`; OGL-enhanced flex fluid transitions scheduled for Phase 05.
+- **Integration Status:** Fully integrated in `src/components/reactbits/FlexCarousel.tsx`, wrapped with dynamic lazy loading in `src/components/shared/FlexCarouselStage.tsx`, and orchestrated in `src/sections/Projects.tsx` during Phase 05. Features 8 prioritized engineering initiatives (`PARALLAX`, `VORTEX`, `VESPER`, `ØMEN`, `AURA`, `GFG 2.0 REDLINE`, `AGARAM`, `ONE PLANET`) with responsive horizontal expanding panels (`lg:flex-[4]` vs `lg:flex-[0.7]`), dual mode Dossier / 3D OGL Reel switcher, accessible roving keyboard navigation, verified engineering highlights, and static accessible presentation for reduced motion.
 
 ---
 

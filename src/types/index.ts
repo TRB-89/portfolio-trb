@@ -19,6 +19,9 @@ export interface Project {
   liveDemoUrl?: string;
   competitionAssociation?: string;
   technicalHighlights: string[];
+  problemStatement?: string;
+  coreSolution?: string;
+  verifiedAchievements?: string[];
   verificationStatus: VerificationStatus;
   isFeatured: boolean;
   benchmarkNotes?: string;

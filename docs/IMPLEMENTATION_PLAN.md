@@ -102,24 +102,35 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   - Automated testing: 18 comprehensive tests in `tests/about-lanyard.spec.ts` covering editorial copy, ScrollReveal integration, authentic credentials, 3D Canvas initialization, two-column and stacked responsive layouts, and reduced-motion fallback. Total test suite expanded to 72 automated Playwright tests with 100% pass rate.
   - Visual QA verification: captured and visually inspected desktop 3D badge (`07-desktop-about-lanyard.png`), mobile stacked layout (`08-mobile-about-lanyard.png`), and reduced-motion accessible fallback (`09-desktop-about-fallback.png`).
 
-#### Phase 05: Interactive Flex Carousel Project Showcase (UPDATED)
-- **Objective:** Deploy the primary interactive horizontal expanding panel showcase for Tarun's software systems.
+#### Phase 05: Interactive Flex Carousel Project Showcase (COMPLETED & VERIFIED)
+- **Objective:** Deploy the primary interactive horizontal expanding panel showcase and 3D ribbon reel for Tarun's software systems.
 - **Component:**
-  8. `FlexCarousel` (Interactive horizontal expanding panels with smooth fluid collapse/expand mechanics).
+  8. `FlexCarousel` (Interactive horizontal expanding panels with smooth fluid collapse/expand mechanics, dual-mode Dossier / 3D OGL ribbon reel).
 - **Milestones:**
-  - Horizontal expanding project panels where clicking or hovering an initiative expands it into a visually dominant layout (`flex-[3.5]`) while smoothly collapsing neighboring panels (`flex-[0.8]`).
-  - Active project panel displays:
-    - High-contrast project cover schematic / artwork.
-    - Active project title, domain, and status badges.
-    - Full technical description and highlights.
-    - Technology stack tags.
-    - Verified repository and live demo links.
-  - Collapsed neighboring panels present rotated vertical identity labels and expand smoothly upon user interaction.
-  - Pure black background (`#050505`), monochrome typography, restrained `#262626` borders, and subtle easing (`ease-industrial`).
-  - Zero circular carousel, cylinder, perspective, rotation, or depth-fade dependencies.
-  - Complete keyboard accessibility (Tab focus, Enter/Space/Arrow key selection).
-  - Touch-friendly mobile layout (vertical accordion cards on mobile viewports).
-  - Reduced-motion support via `useReducedMotion()`.
+  - Integrated official React Bits `FlexCarousel.tsx` (TypeScript + Tailwind, OGL engine) and encapsulated with dynamic lazy-loading in `src/components/shared/FlexCarouselStage.tsx`.
+  - Re-architected `src/sections/Projects.tsx` with a dual-mode stage (`Dossier` expanding horizontal panels vs `3D Reel` curved ribbon), quick index jump buttons (`01` through `08`), and active initiative counters.
+  - Prioritized all 8 required engineering initiatives in strict sequence:
+    1. `PARALLAX` — Cross-sensor SAR surface change analysis (NASA Space Apps 2026 participant codebase).
+    2. `VORTEX` — GPU-accelerated mathematical optimization and CSR sparse solver.
+    3. `VESPER` — Systems engineering architecture undergoing internal documentation verification.
+    4. `ØMEN` — Cybersecurity intelligence, attack graphs, and neural anomaly scoring.
+    5. `AURA — Mental Wellness` — Conversational AI journaling platform with encrypted local audio pipelines.
+    6. `GFG 2.0 REDLINE` — AI-assisted career comeback intelligence for women returning to tech.
+    7. `AGARAM` — Multilingual programming education platform (explicitly labeled `PLANNED` / design staging).
+    8. `ONE PLANET` — Civic sustainability intelligence and municipal issue tracking.
+  - Full engineering dossier rendered per active project:
+    - Domain badge, project index (`01`–`08`), and authentic status badge (`RESEARCH`, `EXPERIMENTAL`, `COMPLETED`, `PLANNED`, `IN_PROGRESS`).
+    - Schematic preview container with authentic label (`[SYSTEM_SCHEMATIC_V2 // HARDWARE_VERIFIED]`, `[ROADMAP_SPECIFICATION // PLANNED_STAGE]`, or `[STAGED_ARCHITECTURE // UNDER_VALIDATION]`).
+    - Two-column problem friction (`01 // PROBLEM FRICTION`) and engineered solution (`02 // ENGINEERED SOLUTION`).
+    - Verified engineering highlights list detailing genuine technical achievements.
+    - Technology stack pills and verified repository and deployment actions.
+  - Interactive horizontal panel expansion on desktop (`lg:flex-[4]` active vs `lg:flex-[0.7]` collapsed) with industrial spring easing (`duration-500 ease-industrial`).
+  - Mobile responsive adaptation: transforms smoothly into an accessible vertical stacked accordion without hover traps.
+  - Keyboard accessibility: full Tab roving focus, Enter/Space expansion, and Left/Right/Up/Down arrow key navigation.
+  - Reduced motion: static presentation without layout transitions when `prefers-reduced-motion` is active.
+  - Preserved secondary complete project catalogue with domain filter tabs (`All Initiatives`, `Geospatial`, `High-Performance`, `Cybersecurity`, `Conversational`, `Sustainability`).
+  - Automated testing: 20 test cases across Chromium & Mobile Chrome in `tests/projects-showcase.spec.ts`. Master suite expanded to 92 automated tests with 100% pass rate (88 passed, 4 desktop-only skipped on mobile).
+  - Visual QA verification: captured and visually inspected desktop expanded dossier (`10-desktop-flex-carousel-expanded.png`), neighbor panel collapse (`11-desktop-flex-carousel-neighbor.png`), mobile stacked accordion (`12-mobile-flex-carousel-stacked.png`), and 3D OGL Reel (`13-desktop-flex-carousel-3d-reel.png`).
 
 #### Phase 06: Engineering Case Studies
 - **Objective:** Deep-dive into technical architectures for flagship initiatives.

@@ -17,6 +17,15 @@ export const projectsData: Project[] = [
     screenshots: [],
     repositoryUrl: 'https://github.com/aadeshmax/PARALLAX',
     competitionAssociation: 'NASA Space Apps Challenge 2026',
+    problemStatement:
+      'High-impact flood events often obscure optical satellite coverage due to heavy cloud cover, creating critical intelligence gaps for disaster relief teams.',
+    coreSolution:
+      'Cross-sensor SAR processing pipeline that ingests all-weather NISAR radar and NASA OPERA surface-water datasets, extracting flood inundation footprints via amplitude thresholding.',
+    verifiedAchievements: [
+      'NASA Space Apps Challenge 2026 participant codebase',
+      'Automated multi-sensor raster coregistration with GDAL and Rasterio',
+      'Real-time client GPU tile rendering using MapLibre GL with zero lag'
+    ],
     technicalHighlights: [
       'Multi-sensor raster ingestion and coregistration with Rasterio and GDAL',
       'Surface-water anomaly detection via SAR amplitude thresholding',
@@ -43,6 +52,15 @@ export const projectsData: Project[] = [
     coverImage: '/images/projects/vortex-cover.svg',
     screenshots: [],
     repositoryUrl: 'https://github.com/TRB-89/V-RTEX',
+    problemStatement:
+      'Standard dense matrix solvers waste substantial compute and memory bandwidth when evaluating sparse systems, creating execution bottlenecks in scientific simulations.',
+    coreSolution:
+      'High-throughput CUDA sparse solver implementing Compressed Sparse Row (CSR) algorithms and parallel reduction routines targeting GPU memory bandwidth saturation.',
+    verifiedAchievements: [
+      'Functional CUDA execution suite verified across NVIDIA architectures',
+      'Demonstrated SpMV throughput gains over naïve unoptimized matrix implementations',
+      'Automated CMake build harness with host-device fallback heuristics'
+    ],
     technicalHighlights: [
       'Custom CUDA kernels tailored for Compressed Sparse Row (CSR) matrix-vector operations',
       'Asynchronous memory transfers utilizing CUDA streams to overlap compute and transfer',
@@ -68,6 +86,14 @@ export const projectsData: Project[] = [
     status: 'in-progress',
     coverImage: '/images/projects/vesper-cover.svg',
     screenshots: [],
+    problemStatement:
+      'Complex systems engineering architectures require rigorous verification and formal validation before public disclosure.',
+    coreSolution:
+      'Modular systems architecture and verifiable computational foundation actively undergoing formal documentation and repository verification.',
+    verifiedAchievements: [
+      'Staged systems architectural specification',
+      'Controlled technical disclosure and peer-review protocol'
+    ],
     technicalHighlights: [
       'Specifications and technical disclosures are retained pending repository verification'
     ],
@@ -91,6 +117,15 @@ export const projectsData: Project[] = [
     coverImage: '/images/projects/omen-cover.svg',
     screenshots: [],
     repositoryUrl: 'https://github.com/TRB-89/-MEN',
+    problemStatement:
+      'Point-in-time security audits fail to identify multi-stage attack paths and subtle lateral movement techniques across modern cloud infrastructure.',
+    coreSolution:
+      'Topological attack graph simulator that maps system vulnerabilities to MITRE ATT&CK techniques and scores telemetry using unsupervised neural autoencoders.',
+    verifiedAchievements: [
+      'Directed acyclic graph dependency modeling using NetworkX',
+      'Autoencoder anomaly scoring on high-dimensional flow statistics',
+      'Dynamic real-time Canvas SOC security visualizer'
+    ],
     technicalHighlights: [
       'Topological attack graph construction mapping vulnerabilities to MITRE ATT&CK techniques',
       'Autoencoder-based network flow anomaly scoring',
@@ -115,6 +150,15 @@ export const projectsData: Project[] = [
     coverImage: '/images/projects/aura-wellness-cover.svg',
     screenshots: [],
     liveDemoUrl: 'https://aura-umber-eight-10.vercel.app/',
+    problemStatement:
+      'Mental wellness tools often suffer from high user friction, impersonal multiple-choice forms, and privacy vulnerabilities in sensitive voice telemetry.',
+    coreSolution:
+      'Empathetic conversational AI journaling companion with low-latency client audio processing, therapeutic guardrails, and client-side encrypted local storage.',
+    verifiedAchievements: [
+      'Production deployment on Vercel at https://aura-umber-eight-10.vercel.app/',
+      'Web Audio API streaming speech recognition with low latency',
+      'Client-side encrypted local journaling session storage'
+    ],
     technicalHighlights: [
       'Low-latency bidirectional audio capture and speech recognition pipeline',
       'Emotion-aware conversational prompting with strict therapeutic guardrails',
@@ -165,6 +209,15 @@ export const projectsData: Project[] = [
     status: 'completed',
     coverImage: '/images/projects/gfg-redline-cover.svg',
     screenshots: [],
+    problemStatement:
+      'Women returning to technical careers encounter opaque market skill requirements, outdated resume signals, and an absence of domain-matched mentorship.',
+    coreSolution:
+      'AI-assisted career comeback platform that analyzes historical background against live job market schemas and matches candidates with verified industry mentors.',
+    verifiedAchievements: [
+      'Structured Gemini schema extraction for granular resume parsing',
+      'Supabase PostgreSQL backend secured with Row Level Security (RLS)',
+      'Algorithmic domain-affinity progression tree'
+    ],
     technicalHighlights: [
       'Dynamic resume parsing and skill gap extraction powered by structured Gemini schemas',
       'Relational database architecture built on Supabase with Row Level Security (RLS)',
@@ -189,6 +242,15 @@ export const projectsData: Project[] = [
     coverImage: '/images/projects/one-planet-cover.svg',
     screenshots: [],
     liveDemoUrl: 'https://one-planet-nine.vercel.app/',
+    problemStatement:
+      'Municipal ecological issues often go unnoticed due to cumbersome reporting systems, delayed responses, and lack of community engagement.',
+    coreSolution:
+      'Civic action platform empowering communities to report urban environmental issues with GPS coordinates and automated categorization, connected to municipal volunteer dashboards.',
+    verifiedAchievements: [
+      'Production deployment on Vercel at https://one-planet-nine.vercel.app/',
+      'Geospatial incident tagging with MapLibre GL and GPS coordinates',
+      'Community-driven verification protocol aligning with UN SDGs'
+    ],
     technicalHighlights: [
       'Geospatial incident tagging with precise GPS coordinates and photo uploads',
       'Community voting and verification mechanism to filter civic reports',
@@ -257,6 +319,15 @@ export const projectsData: Project[] = [
     status: 'planned',
     coverImage: '/images/projects/agaram-cover.svg',
     screenshots: [],
+    problemStatement:
+      'The English-language dominance in developer tooling and error messages poses a steep cognitive barrier for millions of regional-language students learning computer science.',
+    coreSolution:
+      'Multilingual programming education platform translating programming constructs, AST logic, and runtime diagnostics into native regional languages (e.g. Tamil).',
+    verifiedAchievements: [
+      'Conceptual architectural roadmap for multilingual AST translation',
+      'Targeted regional developer education design specification',
+      'Explicitly marked as planned research and staging'
+    ],
     technicalHighlights: [
       'Multilingual abstract syntax tree (AST) explanation generator (Planned)',
       'Localized interactive code execution sandbox (Planned)',
@@ -268,3 +339,18 @@ export const projectsData: Project[] = [
       'Architectural roadmap and planned development phase. Prototype implementation currently in design staging.'
   }
 ];
+
+export const showcaseProjectIds = [
+  'parallax',
+  'vortex',
+  'vesper',
+  'omen',
+  'aura-wellness',
+  'gfg-redline',
+  'agaram',
+  'one-planet'
+];
+
+export const showcaseProjects: Project[] = showcaseProjectIds
+  .map((id) => projectsData.find((p) => p.id === id))
+  .filter((p): p is Project => Boolean(p));

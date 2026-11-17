@@ -129,7 +129,7 @@ npm test
 - **Phase 02 — Visual Identity & Hero:** `COMPLETED` (TechText, LiquidChrome, RotatingText, MetallicPaint, Noise).
 - **Phase 03 — Navigation & Global Interactions:** `COMPLETED` (StaggeredMenu, Dock, TargetCursor, Magnet, GradualBlur — 54 passing tests, 10/18 components active).
 - **Phase 04 — About & 3D Lanyard Identity:** `COMPLETED` (Lanyard 3D physics badge with Verlet simulation, ScrollReveal editorial narrative, accessible static card fallback, 72 passing tests, 12/18 components active).
-- **Phase 05 — Interactive Flex Carousel Project Showcase:** `UPCOMING`
+- **Phase 05 — Interactive Flex Carousel Project Showcase:** `COMPLETED` (FlexCarousel horizontal expanding showcase, 3D OGL ribbon reel, 8 prioritized initiatives, complete engineering dossiers, roving keyboard navigation, 92 passing tests, 13/18 components active).
 - **Phase 06 — Engineering Case Studies & ScrollStack:** `UPCOMING`
 - **Phase 07 — Technical Arsenal & Milestones:** `UPCOMING`
 - **Phase 08 — Currently Building & Contact Refinement:** `UPCOMING`
