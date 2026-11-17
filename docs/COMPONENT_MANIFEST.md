@@ -17,8 +17,8 @@
 | 03 | **Rotating Text** | `RotatingText-TS-TW` | Hero (01) | Framer Motion (Motion) | `motion@^12` | Phase 02 | **INTEGRATED** |
 | 04 | **Staggered Menu** | `StaggeredMenu-TS-TW` | Navigation | GSAP Timeline | `gsap@^3` | Phase 03 | **INTEGRATED** |
 | 05 | **Dock** | `Dock-TS-TW` | Navigation / Shell | React DOM Springs | `react-dom@^19` | Phase 03 | **INTEGRATED** |
-| 06 | **Lanyard** | `Lanyard-TS-TW` | About (02) | Three.js / Verlet Physics | `three@^0.174` | Phase 04 | SCHEDULED |
-| 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 | SCHEDULED |
+| 06 | **Lanyard** | `Lanyard-TS-TW` | About (02) | Three.js / Verlet Physics | `three@^0.174` | Phase 04 | **INTEGRATED** |
+| 07 | **Scroll Reveal** | `ScrollReveal-TS-TW` | About (02) | GSAP ScrollTrigger | `gsap@^3` | Phase 04 | **INTEGRATED** |
 | 08 | **Flex Carousel** | `FlexCarousel-TS-TW` | Selected Work (03) | Fluid Row / OGL Shader | `ogl@^1.0.11` | Phase 05 | STAGED |
 | 09 | **Scroll Stack** | `ScrollStack-TS-TW` | Case Studies (04) | CSS Sticky / Dimming | None (React) | Phase 06 | SCHEDULED |
 | 10 | **Logo Loop** | `LogoLoop-TS-TW` | Technical Arsenal (05) | CSS Marquee Animation | None (React) | Phase 07 | SCHEDULED |
@@ -31,7 +31,7 @@
 | 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 | **INTEGRATED** |
 | 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 | **INTEGRATED** |
 
-**Integration Progress:** 10 of 18 components integrated (55.6% locked component coverage). All 10 active components verified via automated Playwright testing.
+**Integration Progress:** 12 of 18 components integrated (66.7% locked component coverage). All 12 active components verified via automated Playwright testing.
 
 ---
 
@@ -153,8 +153,8 @@
   - `gravity?: number`, `damping?: number`, `elasticity?: number`, `breeze?: number`
 - **Intended Section:** About Me (02).
 - **Performance Considerations:** Continuous Verlet integration and canvas rendering. Must pause simulation when offscreen.
-- **Mobile Fallback:** Static high-contrast ID card preview if WebGL or device performance is limited.
-- **Integration Status:** Visual staging container prepared in `About.tsx`; R3F implementation in Phase 04.
+- **Mobile Fallback:** Static high-contrast ID card preview if WebGL or device performance is limited or reduced motion is requested.
+- **Integration Status:** Fully integrated in `src/components/reactbits/Lanyard.tsx` and wrapped in `src/components/shared/LanyardBadge.tsx` during Phase 04. Employs Verlet rope physics with Three.js, custom high-resolution Tarun R. front/back badge textures (`badge-front.png`, `badge-back.png`), silver metallic hardware, dynamic lazy-loading with Suspense, and accessible static card fallback on `prefers-reduced-motion` or unsupported WebGL.
 
 ---
 
@@ -170,7 +170,7 @@
 - **Intended Section:** About Me (02) biographical text.
 - **Performance Considerations:** Word unblurring via CSS opacity and filter blur.
 - **Mobile Fallback:** Immediate opacity reveal without continuous scrub blur.
-- **Integration Status:** Staged in `About.tsx`; GSAP ScrollTrigger wiring in Phase 04.
+- **Integration Status:** Fully integrated in `src/components/reactbits/ScrollReveal.tsx` and active in `src/sections/About.tsx` during Phase 04. Employs GSAP ScrollTrigger word unmasking with progressive opacity and metallic silver highlight, respecting `prefers-reduced-motion` automatically.
 
 ---
 

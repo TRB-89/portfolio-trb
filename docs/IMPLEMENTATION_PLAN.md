@@ -89,14 +89,18 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   - Automated testing: 54/54 passing Playwright tests covering all 18 specified navigation and interaction behaviors on Desktop Chromium and Mobile Chrome.
   - Visual QA verification: captured and visually inspected desktop/mobile open and closed states in `tests/qa-screenshots/`.
 
-#### Phase 04: About and Lanyard Identity
-- **Objective:** Present the personal engineering narrative and 3D personal badge.
+#### Phase 04: About and Lanyard Identity (COMPLETED & VERIFIED)
+- **Objective:** Present the personal engineering narrative, intellectual framework, and interactive 3D personal badge.
 - **Components:**
-  6. `Lanyard` (Interactive 3D swinging badge with Verlet rope physics and Three.js / React Three Fiber).
-  7. `ScrollReveal` (Biographical text progressive blur unmasking upon scroll).
+  6. `Lanyard` (Interactive 3D swinging badge with Three.js Verlet rope physics simulation, metal silver clip, ribbon strap, and high-resolution monochromatic ID badge textures).
+  7. `ScrollReveal` (Editorial lead statement progressive unmasking with subtle blur, opacity, and metallic silver highlight via GSAP ScrollTrigger).
 - **Milestones:**
-  - Asset pipeline for personal portrait texture, RIT department card details, and nylon strap textures.
-  - Graceful static fallback card when WebGL context or Three.js fails.
+  - Designed custom monochromatic high-resolution badge textures (800×1125 px) for front and back (`public/images/profile/badge-front.png` and `badge-back.png`) detailing Tarun R., CSBS at RIT Chennai, cryptographic seals, and core competencies.
+  - Implemented dynamic code-splitting via `React.lazy` and `Suspense`, isolating Three.js and Verlet rope simulation into an independent chunk (`Lanyard-*.js`, 26.39 kB / 10.74 kB gzip).
+  - Built an accessible static fallback card rendered on devices requesting `prefers-reduced-motion: reduce` or lacking WebGL support, providing high-contrast credential cards with clearance metadata.
+  - Re-architected `src/sections/About.tsx` into a responsive two-column editorial layout: Left column with ScrollReveal lead statement, authentic narrative, and 4 Operating Principles; Right column with authenticated Academic Trajectory card and 3D Identity Lanyard.
+  - Automated testing: 18 comprehensive tests in `tests/about-lanyard.spec.ts` covering editorial copy, ScrollReveal integration, authentic credentials, 3D Canvas initialization, two-column and stacked responsive layouts, and reduced-motion fallback. Total test suite expanded to 72 automated Playwright tests with 100% pass rate.
+  - Visual QA verification: captured and visually inspected desktop 3D badge (`07-desktop-about-lanyard.png`), mobile stacked layout (`08-mobile-about-lanyard.png`), and reduced-motion accessible fallback (`09-desktop-about-fallback.png`).
 
 #### Phase 05: Interactive Flex Carousel Project Showcase (UPDATED)
 - **Objective:** Deploy the primary interactive horizontal expanding panel showcase for Tarun's software systems.

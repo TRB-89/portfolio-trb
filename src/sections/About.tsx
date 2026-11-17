@@ -1,16 +1,18 @@
 import React from 'react';
-import { User, GraduationCap, Compass, ShieldCheck } from 'lucide-react';
+import { User, GraduationCap, Compass, ShieldCheck, Cpu } from 'lucide-react';
 import { profileData } from '../data/profile';
+import ScrollReveal from '../components/reactbits/ScrollReveal';
+import { LanyardBadge } from '../components/shared/LanyardBadge';
 
 export const About: React.FC = () => {
   return (
     <section
       id="about"
       aria-label="About Tarun"
-      className="border-b border-border bg-background-secondary px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-16 border-b border-border bg-background-secondary px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Section Heading */}
+        {/* Section Heading Bar */}
         <div className="mb-12 space-y-2">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-metallic">
             <User className="h-3.5 w-3.5" />
@@ -24,15 +26,35 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Content Grid */}
+        {/* Two-Column Responsive Layout */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
-          {/* Main Biography Column */}
-          <div className="space-y-6 font-body text-base leading-relaxed text-foreground-secondary sm:text-lg lg:col-span-7">
-            {profileData.bio.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          {/* Left Column: Editorial Narrative & Principles (7 cols on lg) */}
+          <div className="space-y-8 lg:col-span-7">
+            {/* Lead Statement with React Bits Scroll Reveal */}
+            <div className="border-b border-border/80 pb-6">
+              <ScrollReveal
+                splitBy="words"
+                mode="scrub"
+                enableBlur={true}
+                blurStrength={3}
+                baseOpacity={0.15}
+                highlightColor="#C0C0C0"
+                containerClassName="scroll-reveal my-0 text-left"
+                textClassName="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-snug"
+              >
+                Architecting software at the convergence of accelerated numerical computation,
+                autonomous intelligence, and tactile industrial interfaces.
+              </ScrollReveal>
+            </div>
 
-            {/* Core Engineering Principles */}
+            {/* Biographical Narrative */}
+            <div className="space-y-5 font-body text-base leading-relaxed text-foreground-secondary sm:text-lg">
+              {profileData.bio.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+
+            {/* Core Operating Principles */}
             <div className="border-t border-border pt-6">
               <h3 className="mb-4 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-metallic">
                 <Compass className="h-4 w-4" />
@@ -42,7 +64,7 @@ export const About: React.FC = () => {
                 {profileData.principles.map((principle, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2.5 rounded border border-border/70 bg-background-surface p-3"
+                    className="flex items-start gap-2.5 rounded border border-border/70 bg-background-surface p-3.5 transition-colors hover:border-metallic/60"
                   >
                     <span className="font-bold text-crimson">0{index + 1}</span>
                     <span className="text-foreground-secondary">{principle}</span>
@@ -52,10 +74,10 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Institutional Card & 3D Lanyard Staging Container */}
+          {/* Right Column: Academic Credentials & 3D Identity Lanyard (5 cols on lg) */}
           <div className="space-y-6 lg:col-span-5">
             {/* Academic Snapshot Card */}
-            <div className="space-y-5 rounded-xl border border-border bg-background-surface p-6">
+            <div className="space-y-5 rounded-xl border border-border bg-background-surface p-6 shadow-sm">
               <div className="flex items-center justify-between border-b border-border/70 pb-4">
                 <div className="flex items-center gap-2.5 font-mono text-xs font-semibold text-foreground">
                   <GraduationCap className="h-4 w-4 text-metallic" />
@@ -93,29 +115,17 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            {/* 3D Lanyard Interactive Stage (Reserved for Phase 4) */}
-            <div
-              className="relative flex aspect-square w-full flex-col justify-between rounded-xl border border-dashed border-border bg-background p-6"
-              aria-label="3D Lanyard Identity Badge Stage"
-            >
+            {/* Interactive 3D Lanyard Developer Identity Badge */}
+            <div className="space-y-2">
               <div className="flex items-center justify-between font-mono text-[11px] text-foreground-muted">
-                <span>[3D_IDENTITY_NODE]</span>
-                <span className="text-crimson">STAGE // PENDING_R3F</span>
+                <span className="flex items-center gap-1.5">
+                  <Cpu className="h-3 w-3 text-metallic" />
+                  <span>3D_IDENTITY_NODE</span>
+                </span>
+                <span className="text-metallic">THREE_JS // VERLET_PHYSICS</span>
               </div>
 
-              <div className="space-y-2 py-8 text-center">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
-                  Interactive Physics Lanyard
-                </p>
-                <p className="mx-auto max-w-xs font-mono text-[11px] text-foreground-muted">
-                  Reserved for React Three Fiber + Three.js swinging badge integration in Phase 04.
-                </p>
-              </div>
-
-              <div className="flex justify-between font-mono text-[10px] text-foreground-muted">
-                <span>ID: TRB_89_CSBS</span>
-                <span>PHYSICS: VERLET_ROPE</span>
-              </div>
+              <LanyardBadge />
             </div>
           </div>
         </div>
@@ -123,3 +133,5 @@ export const About: React.FC = () => {
     </section>
   );
 };
+
+export default About;

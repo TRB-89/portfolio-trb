@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio V2 — Phase 03 Navigation & Global Interactions', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
+    await page.locator('button.sm-toggle').waitFor({ state: 'attached' });
   });
 
   test('01. Staggered Menu opens when menu toggle button is clicked', async ({ page }) => {
