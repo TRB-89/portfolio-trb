@@ -1,74 +1,83 @@
 import React from 'react';
-import { Github, Mail, Code2, ArrowUp } from 'lucide-react';
+import { Terminal, Code2, Github, Mail, ArrowUp } from 'lucide-react';
+import Dock, { DockItemData } from '../reactbits/Dock';
 import { profileData } from '../../data/profile';
 
-export const SocialDock: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export interface SocialDockProps {
+  hidden?: boolean;
+}
+
+export const SocialDock: React.FC<SocialDockProps> = ({ hidden = false }) => {
+  const dockItems: DockItemData[] = [
+    {
+      icon: <Terminal className="h-4 w-4" />,
+      label: 'Home',
+      onClick: () => {
+        document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' });
+      },
+      className: 'cursor-target'
+    },
+    {
+      icon: <Code2 className="h-4 w-4" />,
+      label: 'Projects',
+      onClick: () => {
+        document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+      },
+      className: 'cursor-target'
+    },
+    {
+      icon: <Github className="h-4 w-4" />,
+      label: 'GitHub',
+      onClick: () => {
+        window.open(profileData.contact.github, '_blank', 'noopener,noreferrer');
+      },
+      className: 'cursor-target'
+    },
+    {
+      icon: <Mail className="h-4 w-4" />,
+      label: 'Email',
+      onClick: () => {
+        window.location.href = `mailto:${profileData.contact.email}`;
+      },
+      className: 'cursor-target'
+    },
+    {
+      separator: true
+    },
+    {
+      icon: <ArrowUp className="h-4 w-4" />,
+      label: 'Top',
+      onClick: () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      className: 'cursor-target'
+    }
+  ];
 
   return (
     <aside
       aria-label="Quick Access Dock"
-      className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-xl border border-border/80 bg-background-surface/85 px-3 py-2 shadow-surface backdrop-blur-lg"
+      className={`fixed bottom-3 left-1/2 z-30 -translate-x-1/2 pb-[env(safe-area-inset-bottom)] transition-all duration-300 ease-out sm:bottom-6 ${
+        hidden
+          ? 'pointer-events-none translate-y-12 opacity-0'
+          : 'pointer-events-auto translate-y-0 opacity-100'
+      }`}
     >
-      {/* GitHub Profile */}
-      <a
-        href={profileData.contact.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub Profile"
-        className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 bg-background-secondary text-foreground-secondary transition-all hover:border-metallic hover:bg-background hover:text-foreground"
-      >
-        <Github className="h-4 w-4" />
-        <span className="sr-only">GitHub</span>
-        <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-foreground opacity-0 transition-opacity group-hover:opacity-100">
-          GitHub
-        </span>
-      </a>
-
-      {/* Verified Email */}
-      <a
-        href={`mailto:${profileData.contact.email}`}
-        aria-label="Send Email"
-        className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 bg-background-secondary text-foreground-secondary transition-all hover:border-metallic hover:bg-background hover:text-foreground"
-      >
-        <Mail className="h-4 w-4" />
-        <span className="sr-only">Email</span>
-        <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-foreground opacity-0 transition-opacity group-hover:opacity-100">
-          Email
-        </span>
-      </a>
-
-      {/* Portfolio Repository */}
-      <a
-        href="https://github.com/TRB-89/portfolio-trb"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View Source Repository"
-        className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 bg-background-secondary text-foreground-secondary transition-all hover:border-metallic hover:bg-background hover:text-foreground"
-      >
-        <Code2 className="h-4 w-4" />
-        <span className="sr-only">Source Code</span>
-        <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-foreground opacity-0 transition-opacity group-hover:opacity-100">
-          Source
-        </span>
-      </a>
-
-      <div className="mx-1 h-4 w-px bg-border/80" aria-hidden="true" />
-
-      {/* Back to Top */}
-      <button
-        type="button"
-        onClick={scrollToTop}
-        aria-label="Scroll to top of page"
-        className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 bg-background-secondary text-foreground-secondary transition-all hover:border-metallic hover:bg-background hover:text-foreground"
-      >
-        <ArrowUp className="h-4 w-4" />
-        <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-foreground opacity-0 transition-opacity group-hover:opacity-100">
-          Top
-        </span>
-      </button>
+      <Dock
+        position="bottom"
+        theme="dark"
+        tiles={true}
+        showLabels={true}
+        accentColor="#C0C0C0"
+        baseItemSize={38}
+        magnification={52}
+        distance={110}
+        roundness={0.65}
+        spring={{ mass: 0.5, stiffness: 180, damping: 18 }}
+        items={dockItems}
+      />
     </aside>
   );
 };
+
+export default SocialDock;

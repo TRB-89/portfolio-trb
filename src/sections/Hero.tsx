@@ -5,6 +5,7 @@ import TechText from '../components/reactbits/TechText';
 import LiquidChrome from '../components/reactbits/LiquidChrome';
 import RotatingText from '../components/reactbits/RotatingText';
 import MetallicPaint from '../components/reactbits/MetallicPaint';
+import Magnet from '../components/reactbits/Magnet';
 import { isWebGLAvailable } from '../utils/webgl';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
@@ -16,7 +17,7 @@ export const Hero: React.FC = () => {
     <section
       id="hero"
       aria-label="Identity and Hero"
-      className="bg-industrial-grid relative flex min-h-[calc(100vh-61px)] flex-col justify-between overflow-hidden border-b border-border bg-background px-4 py-12 sm:px-6 lg:px-8"
+      className="bg-industrial-grid relative flex min-h-[calc(100vh-61px)] flex-col justify-between overflow-hidden border-b border-border bg-background px-4 pb-28 pt-8 sm:px-6 sm:py-12 lg:px-8"
     >
       {/* Liquid Chrome Atmospheric WebGL Background */}
       {hasWebGL && !prefersReducedMotion && (
@@ -151,19 +152,37 @@ export const Hero: React.FC = () => {
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-4 pt-4 font-mono text-xs">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded bg-foreground px-5 py-3 font-semibold text-background transition-all hover:bg-metallic"
+            <Magnet
+              magnetStrength={2}
+              maxOffset={12}
+              padding={30}
+              disabled={prefersReducedMotion}
+              wrapperClassName="inline-block"
+              innerClassName="inline-block"
             >
-              <Code2 className="h-4 w-4" />
-              <span>Explore Selected Work</span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded border border-border bg-background-surface px-5 py-3 text-foreground transition-all hover:border-metallic hover:bg-background-secondary"
+              <a
+                href="#projects"
+                className="cursor-target inline-flex items-center gap-2 rounded bg-foreground px-5 py-3 font-semibold text-background transition-all hover:bg-metallic"
+              >
+                <Code2 className="h-4 w-4" />
+                <span>Explore Selected Work</span>
+              </a>
+            </Magnet>
+            <Magnet
+              magnetStrength={2}
+              maxOffset={12}
+              padding={30}
+              disabled={prefersReducedMotion}
+              wrapperClassName="inline-block"
+              innerClassName="inline-block"
             >
-              <span>Initiate Transmission</span>
-            </a>
+              <a
+                href="#contact"
+                className="cursor-target inline-flex items-center gap-2 rounded border border-border bg-background-surface px-5 py-3 text-foreground transition-all hover:border-metallic hover:bg-background-secondary"
+              >
+                <span>Initiate Transmission</span>
+              </a>
+            </Magnet>
           </div>
         </div>
       </div>
@@ -176,7 +195,7 @@ export const Hero: React.FC = () => {
         </div>
         <a
           href="#about"
-          className="flex items-center gap-1.5 text-foreground-secondary transition-colors hover:text-foreground"
+          className="cursor-target flex items-center gap-1.5 text-foreground-secondary transition-colors hover:text-foreground"
         >
           <span>Scroll down</span>
           <ArrowDown className="h-3.5 w-3.5" />

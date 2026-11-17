@@ -112,7 +112,7 @@ export const Projects: React.FC = () => {
                   role="button"
                   aria-expanded={isActive}
                   aria-label={`${project.name} - ${project.domain}`}
-                  className={`group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-border bg-background-surface focus-visible:outline-2 focus-visible:outline-metallic ${
+                  className={`cursor-target group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-xl border border-border bg-background-surface focus-visible:outline-2 focus-visible:outline-metallic ${
                     prefersReducedMotion
                       ? 'transition-none'
                       : 'transition-all duration-500 ease-industrial'
@@ -197,7 +197,7 @@ export const Projects: React.FC = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1.5 text-foreground-secondary transition-colors hover:text-foreground"
+                              className="cursor-target flex items-center gap-1.5 text-foreground-secondary transition-colors hover:text-foreground"
                               aria-label={`${project.name} GitHub Repository`}
                             >
                               <Github className="h-4 w-4" />
@@ -210,7 +210,7 @@ export const Projects: React.FC = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1.5 text-metallic transition-colors hover:text-foreground"
+                              className="cursor-target flex items-center gap-1.5 text-metallic transition-colors hover:text-foreground"
                               aria-label={`${project.name} Live Demo`}
                             >
                               <ExternalLink className="h-4 w-4" />

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, Github, Send, Copy, Check, Terminal, AlertCircle } from 'lucide-react';
 import { profileData } from '../data/profile';
+import Magnet from '../components/reactbits/Magnet';
+import { useReducedMotion } from '../hooks/useReducedMotion';
 
 export const Contact: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -73,7 +76,7 @@ export const Contact: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="rounded p-1.5 text-foreground-secondary transition-colors hover:bg-background-secondary hover:text-foreground"
+                    className="cursor-target rounded p-1.5 text-foreground-secondary transition-colors hover:bg-background-secondary hover:text-foreground"
                     aria-label="Copy verified email to clipboard"
                     title="Copy Email"
                   >
@@ -210,13 +213,22 @@ export const Contact: React.FC = () => {
                 <span className="text-[11px] text-foreground-muted">
                   Submitting dispatches directly to your local mail agent.
                 </span>
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded bg-foreground px-5 py-2.5 font-semibold text-background transition-all hover:bg-metallic"
+                <Magnet
+                  magnetStrength={2}
+                  maxOffset={10}
+                  padding={25}
+                  disabled={prefersReducedMotion}
+                  wrapperClassName="inline-block"
+                  innerClassName="inline-block"
                 >
-                  <span>Dispatch Email</span>
-                  <Send className="h-3.5 w-3.5" />
-                </button>
+                  <button
+                    type="submit"
+                    className="cursor-target inline-flex items-center justify-center gap-2 rounded bg-foreground px-5 py-2.5 font-semibold text-background transition-all hover:bg-metallic"
+                  >
+                    <span>Dispatch Email</span>
+                    <Send className="h-3.5 w-3.5" />
+                  </button>
+                </Magnet>
               </div>
             </form>
           </div>
