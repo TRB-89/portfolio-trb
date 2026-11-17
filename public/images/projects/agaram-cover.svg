@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" fill="none">
+  <rect width="600" height="360" fill="#0A0A0A"/>
+  <rect x="0.5" y="0.5" width="599" height="359" stroke="#262626"/>
+  <line x1="40" y1="40" x2="560" y2="40" stroke="#1C1C1C" stroke-dasharray="4 4"/>
+  <line x1="40" y1="320" x2="560" y2="320" stroke="#1C1C1C" stroke-dasharray="4 4"/>
+  <text x="40" y="28" fill="#707070" font-family="monospace" font-size="11">SYS_NODE: AGARAM</text>
+  <text x="560" y="28" text-anchor="end" fill="#790C18" font-family="monospace" font-size="11">SPEC_V2</text>
+  <text x="300" y="180" text-anchor="middle" fill="#F2F2F2" font-family="sans-serif" font-weight="bold" font-size="28" letter-spacing="2">AGARAM</text>
+  <text x="300" y="210" text-anchor="middle" fill="#A0A0A0" font-family="monospace" font-size="12" letter-spacing="1">MULTILINGUAL CS EDUCATION</text>
+</svg>
