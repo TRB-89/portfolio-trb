@@ -347,8 +347,11 @@ export const showcaseProjectIds = [
   'omen',
   'aura-wellness',
   'gfg-redline',
-  'agaram',
-  'one-planet'
+  'one-planet',
+  'aura-desktop',
+  'nox',
+  'resurrection',
+  'agaram'
 ];
 
 export const showcaseProjects: Project[] = showcaseProjectIds
