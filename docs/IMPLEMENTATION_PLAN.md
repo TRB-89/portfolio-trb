@@ -180,9 +180,24 @@ This document outlines the nine-stage engineering roadmap migrating Tarun R.'s p
   - Automated Regression Testing: 16 dedicated tests in `tests/phase08-refinement.spec.ts`. Master regression suite expanded to 166 automated Playwright tests with 100% pass rate (158 passed, 8 device-specific skips, 0 failures).
   - Visual QA Verification: Captured and visually inspected 12 desktop, mobile, section, and reduced-motion screenshots (`29-` to `40-`) stored in artifact directory.
 
-#### Phase 09: Final Staging, Pre-Flight Verification & Release Preparation
-- **Objective:** Final end-to-end verification and staging preparation on branch `feat/portfolio-v2` prior to production promotion.
+#### Phase 09: Final Staging, Pre-Flight Verification & Release Preparation (COMPLETED & VERIFIED)
+- **Objective:** Final end-to-end verification, accessibility hardening (Lighthouse Accessibility $\ge 95$), empirical link verification (AURA URL resolution), full 166-test regression run, 15 Visual QA captures, release documentation, and Vercel preview staging on branch `feat/portfolio-v2`.
 - **Milestones:**
-  - Verify zero regression against master branch.
-  - Maintain branch safety: zero unapproved pushes to origin or remote production.
-  - Deliver comprehensive handover report with full evidence documentation.
+  - Git Preflight: Confirmed branch `feat/portfolio-v2`, verified base `main` integrity at commit `5ed09bf`, clean remote tracking.
+  - AURA Deployment URL Resolution: Reconciled discrepancy between `aura-umber-eight-10.vercel.app` and `aura-mind.vercel.app`. Proved via HTML/bundle audit that `aura-umber-eight-10.vercel.app` is Tarun's authentic conversational AI wellbeing companion deployment; updated all evidence files.
+  - Public UI Cleanliness: Replaced developer-facing asset-policy disclosures in `src/sections/Contact.tsx` with a refined communication protocol note.
+  - Accessibility Hardening: Audited Lighthouse accessibility findings and resolved 4 Axe rules:
+    1. Fixed `aria-hidden-focus` in `src/components/reactbits/StaggeredMenu.tsx` with dynamic `tabIndex={open ? 0 : -1}` and `inert={!open ? true : undefined}`.
+    2. Fixed `aria-input-field-name` in `src/components/reactbits/AnimatedList.tsx` with `aria-label="Engineering Milestones List"`.
+    3. Fixed `color-contrast` in `tailwind.config.ts` by raising `foreground.muted` from `#707070` to `#8A8A8A` (5.47:1 contrast ratio against `#0A0A0A`).
+    4. Fixed `heading-order` in `src/sections/CaseStudies.tsx` by converting pipeline step `<h5>` to semantic typography `<p>`.
+  - Lighthouse Production Audit: Re-audited production preview build:
+    - **Accessibility: 96 / 100 (Desktop) and 96 / 100 (Mobile)** (Exceeded target $\ge 95$).
+    - **Best Practices: 100 / 100** (Desktop & Mobile).
+    - **SEO: 100 / 100** (Desktop & Mobile).
+    - **CLS: 0.002 (Desktop), 0.000 (Mobile)**.
+  - Full Static Suite: `npm run typecheck` (0 errors), `npm run lint` (0 errors), `npm run format:check` (clean), `npm run build` (0 chunk size warnings; main bundle 427.88 kB).
+  - Full Regression Suite: Executed all 166 Playwright tests with single-worker allocation across 7 test suites: **158 passed, 8 device-specific skips, 0 failures (100% pass rate)**.
+  - Visual QA Verification: Captured 15 comprehensive production-preview screenshots (`41-` through `55-`) across desktop, mobile, component interactions, and reduced-motion states; synced to artifact directory.
+  - Release Documentation: Authored `docs/DEPLOYMENT_GUIDE.md` and `docs/ROLLBACK_PLAN.md`; updated `docs/RELEASE_CHECKLIST.md`, `docs/EVIDENCE_REGISTER.md`, `README.md`, and generated `PHASE_09_EXECUTION_REPORT.md`.
+  - Deployment Protocol: Gated on explicit human authorization from Tarun R. before merging to `main` or deploying to production.

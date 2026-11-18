@@ -32,7 +32,7 @@ Dominant black and industrial monochrome palette with restrained crimson accents
 - **Elevated Surface:** `#141414`
 - **Primary Text:** `#F2F2F2`
 - **Secondary Text:** `#A0A0A0`
-- **Muted Text:** `#707070`
+- **Muted Text:** `#8A8A8A` (WCAG 2.2 AA compliant — 5.47:1 contrast ratio against `#0A0A0A`)
 - **Metallic Accent:** `#C0C0C0`
 - **Borders:** `#262626`
 - **Restrained Crimson:** `#790C18`
@@ -135,9 +135,11 @@ npm test
 - **Phase 06 — Engineering Case Studies & ScrollStack:** `COMPLETED` (ScrollStack card pinning with perspective scale & dimming, 4 flagship dossiers: PARALLAX, VORTEX, ØMEN, VESPER, architecture pipelines, mobile sequential presentation, 122 passing tests, 14/18 components active).
 - **Phase 07 — Technical Arsenal & Milestones:** `COMPLETED` (MagicBento 6-domain asymmetric grid with pointer spotlight & border glow, LogoLoop continuous developer toolchain marquee, CountUp verified numerical benchmarks, AnimatedList spring-driven milestone track record, 150 passing tests, 18/18 locked components active — 100% manifest integration).
 - **Phase 08 — Final Integration, Professional Refinement & Performance Optimization:** `COMPLETED` (Editorial Roadmap & Contact redesign, minimal oversized Colophon footer with static TRB watermark, empirical benchmark reconciliation, Evidence Register & Release Checklist, OpenGraph/Twitter/JSON-LD SEO, chunk splitting reducing index.js to 417 kB, 100/100 Best Practices & SEO, 166 passing Playwright tests).
-- **Phase 09 — Final Staging & Release Verification:** `UPCOMING` (Handover & production promotion verification).
+- **Phase 09 — Final Regression, Release Preparation & Vercel Preview Deployment:** `COMPLETED` (AURA URL resolution to `https://aura-umber-eight-10.vercel.app/`, Contact UI asset disclosure cleanup, Accessibility hardening to 96/100 Desktop & Mobile, 100/100 Best Practices & SEO, 166 Playwright tests passed with 158 passed and 8 skips, 15 Visual QA artifacts captured, Deployment Guide, Rollback Plan, Release Candidate ready).
 
-Detailed implementation plans and component specifications are documented in:
+Detailed implementation plans and operational runbooks are documented in:
+- [DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)
+- [ROLLBACK_PLAN.md](docs/ROLLBACK_PLAN.md)
 - [IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md)
 - [COMPONENT_MANIFEST.md](docs/COMPONENT_MANIFEST.md)
 - [EVIDENCE_REGISTER.md](docs/EVIDENCE_REGISTER.md)

@@ -132,9 +132,9 @@ export const CaseStudies: React.FC = () => {
                   </span>
                 </div>
                 <div className="my-2">
-                  <h5 className="text-[11px] font-semibold leading-snug text-foreground">
+                  <p className="text-[11px] font-semibold leading-snug text-foreground">
                     {stage.label}
-                  </h5>
+                  </p>
                   <p className="mt-1 line-clamp-3 text-[10px] leading-normal text-foreground-muted">
                     {stage.description}
                   </p>

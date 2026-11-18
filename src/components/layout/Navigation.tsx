@@ -67,7 +67,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onMenuStateChange }) => 
           <a
             href="#hero"
             className="cursor-target group flex items-center gap-3 font-mono text-xs font-semibold tracking-wider text-foreground transition-colors hover:text-metallic"
-            aria-label="Tarun R. Portfolio Home"
+            aria-label="TARUN R. — Portfolio Home"
           >
             {/* TRB Metallic Paint Branding Seal */}
             <div className="flex h-7 w-12 items-center justify-center overflow-hidden rounded border border-border bg-background-surface transition-colors group-hover:border-metallic">

@@ -29,7 +29,7 @@ This Evidence Register establishes complete empirical accountability for all tec
 | **EV-03** | **PARALLAX Map Rendering** | Qualitative GPU accelerated raster/vector tiling | Integrated MapLibre GL / Deck.gl web canvas | Renders client-side WebGL tiles smoothly on modern desktop GPUs. Claim explicitly states qualitative fluid rendering; no unqualified 60 FPS SLA. | **VERIFIED** |
 | **EV-04** | **VORTEX GPU Solver Architecture** | CSR representation & CUDA warp-level SpMV primitives | [github.com/TRB-89/V-RTEX](https://github.com/TRB-89/V-RTEX) | Research-oriented CUDA/C++ solver. Tested on compute capability >= 7.5. | **VERIFIED** |
 | **EV-05** | **VORTEX Sparse Memory Footprint** | Up to 85–90% memory footprint savings compared to dense $N \times N$ matrices | Documented in architecture case study (sparse matrices with sparsity > 0.95) | Mathematical property of Compressed Sparse Row (CSR) format: stores $2 \cdot \text{nnz} + N + 1$ elements vs $N^2$. Note: Kernel speedups apply to execution time only; end-to-end latency includes host-to-device PCIe overhead. The arbitrary 95%+ CountUp metric was eliminated in Phase 08. | **VERIFIED & RECONCILED** |
-| **EV-06** | **AURA Conversational Healthcare** | Deployed real-time mental wellness conversational companion | [aura-mind.vercel.app](https://aura-mind.vercel.app/) | Live production web application on Vercel. Operates with explicit disclaimer: supplementary emotional support tool, not licensed psychiatric medical diagnostic software. | **VERIFIED** |
+| **EV-06** | **AURA Conversational Healthcare** | Deployed real-time mental wellness conversational companion | [aura-umber-eight-10.vercel.app](https://aura-umber-eight-10.vercel.app/) | Live production web application on Vercel. Operates with explicit disclaimer: supplementary emotional support tool, not licensed psychiatric medical diagnostic software. | **VERIFIED** |
 | **EV-07** | **ONE PLANET Civic Platform** | Live deployment for municipal civic reporting & SDG engagement | [one-planet-nine.vercel.app](https://one-planet-nine.vercel.app/) | Live deployment on Vercel. Prototype community engagement platform with real-time issue categorization. | **VERIFIED** |
 | **EV-08** | **GFG REDLINE Platform** | AI-powered career comeback & skill-gap remediation platform | [github.com/TRB-89](https://github.com/TRB-89) | GeeksforGeeks hackathon prototype codebase; validated automated pathway generation logic. | **VERIFIED** |
 | **EV-09** | **ØMEN Attack Graph System** | Directed Acyclic Graph (DAG) reachability & attack path simulator | [github.com/TRB-89/-MEN](https://github.com/TRB-89/-MEN) | Algorithmic threat path prototype utilizing NetworkX / graph traversal. Explicitly documented as research simulation, not enterprise SOC or agentic EDR. | **VERIFIED** |
@@ -55,7 +55,7 @@ This Evidence Register establishes complete empirical accountability for all tec
      - Status: Undergraduate (In Progress, 2024 — Present)
 
 3. **Deployments Count:**
-   - *Verified live web applications:* 2 (AURA at `aura-mind.vercel.app`, ONE PLANET at `one-planet-nine.vercel.app`).
+   - *Verified live web applications:* 2 (AURA at `aura-umber-eight-10.vercel.app`, ONE PLANET at `one-planet-nine.vercel.app`).
    - *Metric:* Maintained at exactly `2` under "Active Deployments".
 
 ---

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Send, Copy, Check, Terminal, AlertCircle, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Send, Copy, Check, Terminal, ArrowUpRight } from 'lucide-react';
 import { profileData } from '../data/profile';
 import Magnet from '../components/reactbits/Magnet';
 import { useReducedMotion } from '../hooks/useReducedMotion';
@@ -128,12 +128,12 @@ export const Contact: React.FC = () => {
                 </a>
               </div>
 
-              {/* Asset Policy Disclosure */}
+              {/* Communication Protocol */}
               <div className="flex items-start gap-2.5 rounded border border-border/70 bg-background p-3.5 font-mono text-[11px] text-foreground-muted">
-                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-metallic" />
+                <Terminal className="mt-0.5 h-3.5 w-3.5 shrink-0 text-metallic" />
                 <span>
-                  LinkedIn profile and compiled resume PDF links are withheld in accordance with
-                  asset verification guidelines until final production assets are provided.
+                  Direct transmissions are monitored daily. For formal correspondence, security
+                  disclosures, or research collaborations, reach out directly via email.
                 </span>
               </div>
             </div>

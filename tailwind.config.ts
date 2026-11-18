@@ -14,7 +14,7 @@ const config: Config = {
         foreground: {
           DEFAULT: '#F2F2F2',
           secondary: '#A0A0A0',
-          muted: '#707070'
+          muted: '#8A8A8A'
         },
         metallic: {
           DEFAULT: '#C0C0C0',

@@ -601,6 +601,7 @@ const AnimatedList = ({
         ref={viewportRef}
         className={`${VIEWPORT_CLASS} ${displayScrollbar ? SCROLLBAR_CLASS : BARE_CLASS}`}
         role="listbox"
+        aria-label="Engineering Milestones List"
         tabIndex={0}
         aria-activedescendant={
           selected >= 0 && selected < items.length ? `${baseId}-${selected}` : undefined

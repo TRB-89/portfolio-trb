@@ -568,6 +568,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           className="staggered-menu-panel pointer-events-auto absolute right-0 top-0 z-10 flex h-full flex-col overflow-y-auto p-[6em_2em_2em_2em]"
           aria-hidden={!open}
           aria-label="Navigation Panel"
+          inert={!open ? true : undefined}
         >
           <div className="sm-panel-inner flex flex-1 flex-col gap-6">
             <nav aria-label="Main Navigation" className="w-full">
@@ -586,6 +587,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         className="sm-panel-item cursor-target relative inline-block cursor-pointer pr-[2em] font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold uppercase leading-tight tracking-tight no-underline transition-all duration-200 hover:translate-x-1"
                         href={it.link}
                         aria-label={it.ariaLabel}
+                        tabIndex={open ? 0 : -1}
                         data-index={idx + 1}
                         onClick={closeMenu}
                       >
@@ -626,6 +628,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         href={s.link}
                         target={s.link.startsWith('http') ? '_blank' : undefined}
                         rel={s.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        tabIndex={open ? 0 : -1}
                         className="sm-socials-link cursor-target relative inline-block py-1 text-foreground-secondary no-underline transition-colors duration-200 hover:text-foreground"
                         onClick={s.link.startsWith('#') ? closeMenu : undefined}
                       >

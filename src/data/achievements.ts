@@ -42,7 +42,7 @@ export const achievementsData: Achievement[] = [
     description:
       'Designed and deployed an AI-driven conversational health companion featuring real-time sentimental safety boundaries and responsive client interface.',
     verificationStatus: 'verified',
-    link: 'https://aura-mind.vercel.app/'
+    link: 'https://aura-umber-eight-10.vercel.app/'
   },
   {
     id: 'gfg-redline-platform',
