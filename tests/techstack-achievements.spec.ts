@@ -1,9 +1,10 @@
+
 import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio V2 — Phase 07 Technical Arsenal, Expertise & Achievements', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   });
 
   // -------------------------------------------------------------
@@ -108,7 +109,7 @@ test.describe('Portfolio V2 — Phase 07 Technical Arsenal, Expertise & Achievem
     await expect(section).toContainText(/Technical Systems/i);
     await expect(section).toContainText(/Core Domains/i);
     await expect(section).toContainText(/Active Deployments/i);
-    await expect(section).toContainText(/Sparse Memory Savings/i);
+    await expect(section).toContainText(/Architecture Dossiers/i);
 
     // Wait for CountUp animation in viewport
     await page.waitForTimeout(2000);
@@ -116,7 +117,7 @@ test.describe('Portfolio V2 — Phase 07 Technical Arsenal, Expertise & Achievem
     await expect(section).toContainText('11');
     await expect(section).toContainText('6');
     await expect(section).toContainText('2');
-    await expect(section).toContainText('95');
+    await expect(section).toContainText('4');
   });
 
   test('08. Animated List renders all 6 verified milestone records', async ({ page }) => {
@@ -180,7 +181,7 @@ test.describe('Portfolio V2 — Phase 07 Technical Arsenal, Expertise & Achievem
   test('12. Reduced motion fallback presents static toolchain and static metrics', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const techSection = page.locator('#tech-stack');
     await expect(techSection).toBeVisible();
@@ -191,7 +192,7 @@ test.describe('Portfolio V2 — Phase 07 Technical Arsenal, Expertise & Achievem
     await expect(achievementsSection).toContainText('11');
     await expect(achievementsSection).toContainText('6');
     await expect(achievementsSection).toContainText('2');
-    await expect(achievementsSection).toContainText('95');
+    await expect(achievementsSection).toContainText('4');
   });
 
   test('13. Mobile viewport responsive check without horizontal overflow', async ({ page, isMobile }) => {

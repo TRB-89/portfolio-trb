@@ -6,30 +6,31 @@ export const profileData: Profile = {
   role: 'AI & SYSTEMS DEVELOPER',
   titles: [
     'AI & Systems Developer',
-    'Computational Engineering Enthusiast',
+    'Computational Systems Enthusiast',
     'Full-Stack Developer',
-    'Product Builder',
     'CSBS Undergraduate'
   ],
-  tagline: 'Bridging computational engineering, AI systems, and industrial interactive software.',
+  tagline:
+    'I build intelligent systems at the intersection of artificial intelligence, computational engineering and real-world problems. My work spans GPU-accelerated computation, geospatial intelligence, cybersecurity and full-stack product development.',
   bio: [
-    'Undergraduate developer studying Computer Science and Business Systems at Rajalakshmi Institute of Technology. I engineer software systems that operate at the junction of high-performance computation, artificial intelligence, and purposeful user interfaces.',
-    'Rather than treating models, low-level algorithms, and interactive frontends as disjoint domains, I build unified software architectures — from GPU-accelerated sparse matrix kernels and geospatial SAR analysis pipelines to tactile, editorial web applications.',
-    'My work focuses on concrete technical execution: verifiable pipelines, robust design engineering, and honest experimental reporting.'
+    'I build intelligent systems at the intersection of artificial intelligence, computational engineering and real-world problems. My work spans GPU-accelerated computation, geospatial intelligence, cybersecurity and full-stack product development.',
+    'Currently pursuing a Bachelor of Technology in Computer Science and Business Systems at Rajalakshmi Institute of Technology, Chennai (2024 — Present). Rather than treating theoretical algorithms, machine learning models, and interactive frontends as isolated disciplines, I focus on building functional end-to-end architectures.',
+    'My work centers on concrete, verifiable execution: authoring GPU-accelerated sparse matrix kernels (VORTEX), engineering multi-sensor geospatial radar pipelines (PARALLAX), prototyping graph-based threat analysis systems (ØMEN), and deploying accessible, production-grade web platforms.'
   ],
   education: {
-    degree: 'B.Tech in Computer Science and Business Systems',
-    institution: 'Rajalakshmi Institute of Technology',
+    degree: 'B.Tech in Computer Science and Business Systems (In Progress)',
+    institution: 'Rajalakshmi Institute of Technology, Chennai',
     department: 'Department of Computer Science and Business Systems',
-    status: 'Undergraduate'
+    status: 'Undergraduate (2024 — Present)'
   },
   contact: {
     email: 'tarunbanu2007@gmail.com',
     github: 'https://github.com/TRB-89'
-    // LinkedIn profile and verified resume download links remain omitted until verified assets are provided.
+    // LinkedIn profile and verified resume download links remain omitted until verified production assets are supplied.
   },
   location: 'Chennai, India',
-  status: 'Open to high-impact technical engineering roles and research collaborations',
+  status:
+    'Open to internships, research collaborations, hackathons and ambitious engineering projects',
   principles: [
     'Empirical execution over superficial complexity',
     'Monochrome, high-contrast, industrial clarity',

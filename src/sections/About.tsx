@@ -84,7 +84,7 @@ export const About: React.FC = () => {
                   <span>Academic Trajectory</span>
                 </div>
                 <span className="rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] uppercase text-foreground-muted">
-                  Undergraduate
+                  Undergraduate (In Progress)
                 </span>
               </div>
 
@@ -102,16 +102,14 @@ export const About: React.FC = () => {
                   </span>
                 </div>
                 <div>
-                  <span className="block text-[11px] text-foreground-muted">Specialization</span>
-                  <span className="text-foreground-secondary">
-                    Mathematical Algorithms, Distributed Data &amp; Systems Architecture
-                  </span>
+                  <span className="block text-[11px] text-foreground-muted">Enrollment Status</span>
+                  <span className="text-foreground-secondary">{profileData.education.status}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 border-t border-border/70 pt-4 font-mono text-[11px] text-foreground-muted">
                 <ShieldCheck className="h-3.5 w-3.5 text-metallic" />
-                <span>Academic Record &amp; Enrollment Authenticated</span>
+                <span>Academic Record &amp; Enrollment Authenticated // In Progress</span>
               </div>
             </div>
 

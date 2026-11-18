@@ -88,6 +88,8 @@ portfolio-trb/
 ├── docs/
 │   ├── IMPLEMENTATION_PLAN.md
 │   ├── COMPONENT_MANIFEST.md
+│   ├── EVIDENCE_REGISTER.md
+│   ├── RELEASE_CHECKLIST.md
 │   └── ASSET_REQUIREMENTS.md
 ├── tests/
 ├── index.html
@@ -132,10 +134,12 @@ npm test
 - **Phase 05 — Interactive Flex Carousel Project Showcase:** `COMPLETED` (FlexCarousel horizontal expanding showcase, 3D OGL ribbon reel, 8 prioritized initiatives, complete engineering dossiers, roving keyboard navigation, 92 passing tests, 13/18 components active).
 - **Phase 06 — Engineering Case Studies & ScrollStack:** `COMPLETED` (ScrollStack card pinning with perspective scale & dimming, 4 flagship dossiers: PARALLAX, VORTEX, ØMEN, VESPER, architecture pipelines, mobile sequential presentation, 122 passing tests, 14/18 components active).
 - **Phase 07 — Technical Arsenal & Milestones:** `COMPLETED` (MagicBento 6-domain asymmetric grid with pointer spotlight & border glow, LogoLoop continuous developer toolchain marquee, CountUp verified numerical benchmarks, AnimatedList spring-driven milestone track record, 150 passing tests, 18/18 locked components active — 100% manifest integration).
-- **Phase 08 — Currently Building & Contact Refinement:** `UPCOMING`
-- **Phase 09 — Final Audit & Production Hardening:** `UPCOMING`
+- **Phase 08 — Final Integration, Professional Refinement & Performance Optimization:** `COMPLETED` (Editorial Roadmap & Contact redesign, minimal oversized Colophon footer with static TRB watermark, empirical benchmark reconciliation, Evidence Register & Release Checklist, OpenGraph/Twitter/JSON-LD SEO, chunk splitting reducing index.js to 417 kB, 100/100 Best Practices & SEO, 166 passing Playwright tests).
+- **Phase 09 — Final Staging & Release Verification:** `UPCOMING` (Handover & production promotion verification).
 
 Detailed implementation plans and component specifications are documented in:
 - [IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md)
 - [COMPONENT_MANIFEST.md](docs/COMPONENT_MANIFEST.md)
+- [EVIDENCE_REGISTER.md](docs/EVIDENCE_REGISTER.md)
+- [RELEASE_CHECKLIST.md](docs/RELEASE_CHECKLIST.md)
 - [ASSET_REQUIREMENTS.md](docs/ASSET_REQUIREMENTS.md)

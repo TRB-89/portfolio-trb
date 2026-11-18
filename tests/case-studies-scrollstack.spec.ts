@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio V2 — Phase 06 Engineering Case Studies & ScrollStack', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
   });
 
   test('01. Case studies section renders with correct label and heading', async ({ page }) => {
@@ -201,7 +201,7 @@ test.describe('Portfolio V2 — Phase 06 Engineering Case Studies & ScrollStack'
     // Set prefers-reduced-motion: reduce
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const sequentialContainer = page.locator('[data-testid="case-studies-sequential"]');
     await expect(sequentialContainer).toBeVisible();

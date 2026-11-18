@@ -94,11 +94,12 @@ export const technicalMetricsData: TechnicalMetric[] = [
     verified: true
   },
   {
-    id: 'sparse-matrix-savings',
-    value: 95,
-    suffix: '%+',
-    label: 'Sparse Memory Savings',
-    description: 'CSR memory footprint reduction achieved in VORTEX GPU matrix benchmarks',
+    id: 'architecture-dossiers',
+    value: 4,
+    suffix: '',
+    label: 'Architecture Dossiers',
+    description:
+      'Detailed engineering case studies documenting tradeoffs, pipelines, and technical constraints',
     verified: true
   }
 ];

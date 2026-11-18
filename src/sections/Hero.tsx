@@ -146,8 +146,7 @@ export const Hero: React.FC = () => {
 
           {/* Tagline Narrative */}
           <p className="max-w-2xl pt-2 font-body text-base leading-relaxed text-foreground-secondary sm:text-lg">
-            {profileData.tagline} Focused on GPU-accelerated numerical kernels, multi-spectral SAR
-            geospatial pipelines, and resilient interactive interfaces.
+            {profileData.tagline}
           </p>
 
           {/* Action CTAs */}

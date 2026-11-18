@@ -31,7 +31,7 @@
 | 17 | **Noise** | `Noise-TS-TW` | Global Shell | Canvas / SVG Grain | None (React) | Phase 02 | **INTEGRATED** |
 | 18 | **Metallic Paint** | `MetallicPaint-TS-TW` | Hero / TRB Branding | WebGL Fluid Shader | None (React WebGL) | Phase 02 | **INTEGRATED** |
 
-**Integration Progress:** 18 of 18 components integrated (100.0% locked component coverage). All 18 active components verified via automated Playwright testing (142 passed, 8 skipped across 150 test executions).
+**Integration Progress:** 18 of 18 components integrated (100.0% locked component coverage). All 18 active components verified via automated Playwright regression testing (158 passed, 8 skipped across 166 test executions). Chunking and lifecycle disposals optimized in Phase 08.
 
 ---
 
